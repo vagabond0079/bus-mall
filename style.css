@@ -1,0 +1,20 @@
+/* =========== Reset ========== */
+
+* {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+.clear-fix {
+  clear: both;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* ==========   ========== */
