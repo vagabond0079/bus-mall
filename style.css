@@ -17,4 +17,15 @@ html, body {
   height: 100%;
 }
 
+body {
+  width: 960px;
+}
+
 /* ==========   ========== */
+
+.product-img {
+  height: 300px;
+  width: auto;
+  margin: 8px;
+  padding: 8px;
+}
