@@ -91,6 +91,9 @@ function handleImg0Click(e) {
   console.log('totalClicks is ' + totalClicks);
 
   if(totalClicks === 25){
+    img0.removeEventListener('click', handleImg0Click);
+    img1.removeEventListener('click', handleImg1Click);
+    img2.removeEventListener('click', handleImg2Click);
     console.log('displayResults();');
   }else if(threeCycle === 3){
     for(var j = 0; j < products.length; j++){
@@ -123,6 +126,9 @@ function handleImg1Click(e) {
   console.log('totalClicks is ' + totalClicks);
 
   if(totalClicks === 25){
+    img0.removeEventListener('click', handleImg0Click);
+    img1.removeEventListener('click', handleImg1Click);
+    img2.removeEventListener('click', handleImg2Click);
     console.log('displayResults();');
   }else if(threeCycle === 3){
     for(var j = 0; j < products.length; j++){
@@ -155,6 +161,9 @@ function handleImg2Click(e) {
   console.log('totalClicks is ' + totalClicks);
 
   if(totalClicks === 25){
+    img0.removeEventListener('click', handleImg0Click);
+    img1.removeEventListener('click', handleImg1Click);
+    img2.removeEventListener('click', handleImg2Click);
     console.log('displayResults();');
   }else if(threeCycle === 3){
     for(var j = 0; j < products.length; j++){
@@ -189,4 +198,4 @@ img2.addEventListener('click', handleImg2Click);
 
 
 /* ========== Render List of Products with Votes Received ========== */
-// function displayResults();
+function displayResults();
