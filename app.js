@@ -1,52 +1,103 @@
 'use strict';
 
+/* ========== Global variables ========== */
+
+var products = [];
+var currentProductsDisplayed = [];
+var randomNumber;
+var prevRandomNumber;
+var firstRandomNumber;
+
 /* ========== Product-img Object Contstructor ========== */
 
-function ProductImg(productName, filePath, numberTimesShown, numberTimesClicked, htmlId){
-  this.productName = productName;
-  this.filePath = filePath;
-  this.numberTimesShown = numberTimesShown;
-  this.numberTimesClicked = numberTimesClicked;
+function Product(name, imgName, htmlId){
+  this.name = name;
+  this.imgName= imgName;
+  this.numberTimesShown = 0;
+  this.numberTimesClicked = 0;
   this.htmlId = htmlId;
+  this.previouslyDisplayed = false;
 }
+
 
 /* ========== Create Product-img Objects ========== */
 
-var productBag = new ProductImg('R2D2 Rolling Suitcase', 'img/bag.jpg', 0, 0, 'bag');
-var productBanana = new ProductImg('Banana Slicer', 'img/banana.jpg', 0, 0, 'banana');
-var productBathroom = new ProductImg('Bathroom iPad Holder', 'img/bathroom.jpg', 0, 0, 'bathroom');
-var productBoots = new ProductImg('Toe-less Boots', 'img/boots.jpg', 0, 0, 'boots');
-var productBreakfast = new ProductImg('All-in-One Breakfast Station', 'img/breakfast.jpg', 0, 0, 'breakfast');
-var productBubbleGum = new ProductImg('Italian Meatball Bubblegum', 'img/bubblegum.jpg', 0, 0, 'bubblegum');
-var productChair = new ProductImg('Humpback Chair', 'img/chair.jpg', 0, 0, 'chair');
-var productCthulu = new ProductImg('Cthulu Figure', 'img/cthulu.jpg', 0, 0, 'cthulu');
-var productDogDuck = new ProductImg('Duck Mask for Dogs', 'img/duck-dog.jpg', 0, 0, 'duck-dog');
-var productDragon = new ProductImg('Dragon Meat', 'img/dragon.jpg', 0, 0, 'dragon');
-var productPen = new ProductImg('Pen Cap Flatware', 'img/pen.jpg', 0, 0, 'pen');
-var productPetSweep = new ProductImg('Pet Sweep', 'img/pet-sweep.jpg', 0, 0, 'pet-sweep');
-var productScissors = new ProductImg('Pizza Scissors', 'img/scissors.jpg', 0, 0, 'scissors');
-var productShark = new ProductImg('Shark Sleeping Bag', 'img/shark.jpg', 0, 0, 'shark');
-var productPetSweep = new ProductImg('Baby Sweepwer Onesie', 'img/sweep.jpg', 0, 0, 'sweep');
-var productTauntaun = new ProductImg('Tauntaun Sleeping Bag', 'img/tauntaun.jpg', 0, 0, 'tauntaun');
-var productUnicorn = new ProductImg('Unicorn Meat', 'img/unicorn.jpg', 0, 0, 'unicorn');
-var productUSB = new ProductImg('Tentacle USB Flash Drive', 'img/usb.jpg', 0, 0, 'usb');
-var productWaterCan = new ProductImg('Reversed Watering Can', 'img/water-can.jpg', 0, 0, 'water-can');
-var productWineGlass = new ProductImg('Novelty Wine Glass', 'img/wine-glass.jpg', 0, 0, 'wine-glass');
-
-/* ========== Random Product-img Selector ========== */
+products[0] = new Product('R2D2 Rolling Suitcase', 'bag.jpg', 'bag');
+products[1] = new Product('Banana Slicer', 'banana.jpg', 'banana');
+products[2] = new Product('Bathroom iPad Holder', 'bathroom.jpg', 'bathroom');
+products[3] = new Product('Toe-less Boots', 'boots.jpg', 'boots');
+products[4] = new Product('All-in-One Breakfast Station', 'breakfast.jpg', 'breakfast');
+products[5] = new Product('Italian Meatball Bubblegum', 'bubblegum.jpg', 'bubblegum');
+products[6] = new Product('Humpback Chair', 'chair.jpg', 'chair');
+products[7] = new Product('Cthulu Figure', 'cthulhu.jpg', 'cthulu');
+products[8] = new Product('Duck Mask for Dogs', 'dog-duck.jpg', 'dog-duck');
+products[9] = new Product('Dragon Meat', 'dragon.jpg', 'dragon');
+products[10] = new Product('Pen Cap Flatware', 'pen.jpg', 'pen');
+products[11] = new Product('Pet Sweep', 'pet-sweep.jpg', 'pet-sweep');
+products[12] = new Product('Pizza Scissors', 'scissors.jpg', 'scissors');
+products[13] = new Product('Shark Sleeping Bag', 'shark.jpg', 'shark');
+products[14] = new Product('Baby Sweepwer Onesie', 'sweep.png', 'sweep');
+products[15] = new Product('Tauntaun Sleeping Bag', 'tauntaun.jpg', 'tauntaun');
+products[16] = new Product('Unicorn Meat', 'unicorn.jpg', 'unicorn');
+products[17] = new Product('Tentacle USB Flash Drive', 'usb.gif', 'usb');
+products[18] = new Product('Reversed Watering Can', 'water-can.jpg', 'water-can');
+products[19] = new Product('Novelty Wine Glass', 'wine-glass.jpg', 'wine-glass');
 
 
 
-var productImgs = [];
+/* ========== Random Product-img Chooser ========== */
+
+function randomProductChooser(){
+
+  for(var i = 0; i < 3; i++){
+    randomNumber = Math.floor (Math.random() * (products.length));
+    console.log('randomNumber is ' + randomNumber, 'prevRandomNumber is ' + prevRandomNumber, 'firstRandomNumber is ' + firstRandomNumber);
+    if(randomNumber != prevRandomNumber && randomNumber != firstRandomNumber){
+      currentProductsDisplayed.push(products[randomNumber]);
+      products[randomNumber].previouslyDisplayed = true;
+      products[randomNumber].numberTimesShown++;
+      firstRandomNumber = prevRandomNumber;
+      prevRandomNumber = randomNumber;
+    } else {
+      i--;
+    }
+  }
+}
+
+randomProductChooser();
 
 /* ========== Render Random Product-img ========== */
 
+/* create DOM manipulator to create elements and push the currentProductsDisplayed to the view.*/
+/* create a loop to turn all products[].previouslyDisplayed to false*/
+
+function productImageRender(){
+  for(var i = 0; i < 3; i++){
+    var newImg = document.createElement('img');
+    newImg.setAttribute('src', 'img/'+currentProductsDisplayed[i].imgName);
+    newImg.setAttribute('class', 'product-img');
+    document.getElementById('img'+i).appendChild(newImg);
+  }
+  // for(var j = 0; j < products.length; j++){
+  //   products[j].previouslyDisplayed = false;
+  // }
+  // randomNumber = false;
+  // prevRandomNumber = false;
+  // firstRandomNumber = false;
+}
+
+productImageRender();
+
 /* ========== Click Receiver ========== */
+
+
 
 /* ========== Click Tracker ========== */
 
 /* ========== Product-img Display Tracker ========== */
 
 /* ========== Event Listener ========== */
+
+
 
 /* ========== Render List of Products with Votes Received ========== */
