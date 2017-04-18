@@ -22,7 +22,7 @@ function Product(name, imgName, htmlId){
 }
 
 
-/* ========== Create Product-img Objects ========== */
+// ========== Create Product-img Objects ========== //
 
 products[0] = new Product('R2D2 Rolling Suitcase', 'bag.jpg', 'bag');
 products[1] = new Product('Banana Slicer', 'banana.jpg', 'banana');
