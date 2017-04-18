@@ -198,58 +198,92 @@ img2.addEventListener('click', handleImg2Click);
 
 
 /* ========== Render List of Products with Votes Received ========== */
-function displayResults() {
+//function displayResults() {
+//  console.log('nothing to see here');
 
-  for(var i = 0; i < products.length; i++){
-    var newEl = document.createElement('h2');
-    newEl.id = products[i] + 'header';
-    var newText = document.createTextNode(products[i].name);
-    newEl.appendChild(newText);
-    var position = document.getElementById('tableWrap');
-    position.appendChild(newEl);
-
-    newEl = document.createElement('p');
-    newEl.id = products[i] + 'text';
-    newText = document.createTextNode('Shown ' + products[i].numberTimesShown + ' times. ');
-    newEl.appendChild(newText);
-    newText = document.createTextNode('Clicked ' + products[i].numberTimesClicked + ' times. ');
-    newEl.appendChild(newText);
-    var percentageClicked = Math.round((products[i].numberTimesClicked / products[i].numberTimesShown) * 100);
-    newText = document.createTextNode('Clicked ' + percentageClicked + ' percent of the time');
-    newEl.appendChild(newText);
-    position = document.getElementById('tableWrap');
-    position.appendChild(newEl);
-  }
-};
-
-//   var newEl = document.createElement('table');
-//   newEl.id = 'resultsTable';
-//   var position = document.getElementById('tableWrap');
-//   position.appendChild(newEl);
-//
-//   newEl = document.createElement('thead');
-//   newEl.id = 'colHeaders';
-//   position = document.getElementById('resultsTable');
-//   position.appendChild(newEl);
-//
-//   newEl = document.createElement('tr');
-//   newEl.id = 'colHeadersRow';
-//   position = document.getElementById('colHeaders');
-//   position.appendChild(newEl);
-//
-//   newEl = document.createElement('th');
-//   newEl.className = 'firstCol';
-//   newEl.className = 'topLeft';
-//   var newText = document.createTextNode('Focus Group Result');
-//   newEl.appendChild(newText);
-//   position = document.getElementById('colHeadersRow');
-//   position.appendChild(newEl);
-//
-//   for (var i = 0; i < products.length; i++){
-//     newEl = document.createElement('th');
-//     newText = document.createTextNode(products[i].name);
+//   for(var i = 0; i < products.length; i++){
+//     var newEl = document.createElement('h2');
+//     newEl.id = products[i] + 'header';
+//     var newText = document.createTextNode(products[i].name);
 //     newEl.appendChild(newText);
-//     position = document.getElementById('colHeadersRow');
+//     var position = document.getElementById('tableWrap');
+//     position.appendChild(newEl);
+//
+//     newEl = document.createElement('p');
+//     newEl.id = products[i] + 'text';
+//     newText = document.createTextNode('Shown ' + products[i].numberTimesShown + ' times. ');
+//     newEl.appendChild(newText);
+//     newText = document.createTextNode('Clicked ' + products[i].numberTimesClicked + ' times. ');
+//     newEl.appendChild(newText);
+//     var percentageClicked = Math.round((products[i].numberTimesClicked / products[i].numberTimesShown) * 100);
+//     newText = document.createTextNode('Clicked ' + percentageClicked + ' percent of the time');
+//     newEl.appendChild(newText);
+//     position = document.getElementById('tableWrap');
 //     position.appendChild(newEl);
 //   }
-// }
+//}
+// ========== Bar Chart of Results ==========
+
+function displayResults() {
+  var newEl = document.createElement('canvas');
+  newEl.id = 'resultsChart';
+  var position = document.getElementById('app');
+  position.appendChild(newEl);
+
+  var ctx = document.getElementById('resultsChart').getContext('2d');
+
+  // var productNames = [];
+  //
+  // function productsToProductNames() {
+  //   for(var i = 0; i < products.length; i++){
+  //     productNames.push(products[i].name);
+  //   }
+  // }
+  //
+  // productsToProductNames();
+
+  var resultsChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+      labels: [products[0].name, products[1].name, products[2].name, products[3].name, products[4].name, products[5].name, products[6].name, products[7].name, products[8].name, products[9].name, products[10].name, products[11].name, products[12].name, products[13].name, products[14].name, products[15].name, products[16].name, products[17].name, products[18].name, products[19].name],
+      datasets: [{
+        label: '# of Votes',
+        data: [products[0].numberTimesClicked, products[1].numberTimesClicked, products[2].numberTimesClicked, products[3].numberTimesClicked, products[4].numberTimesClicked, products[5].numberTimesClicked, products[6].numberTimesClicked, products[7].numberTimesClicked, products[8].numberTimesClicked, products[9].numberTimesClicked, products[10].numberTimesClicked, products[11].numberTimesClicked, products[12].numberTimesClicked, products[13].numberTimesClicked, products[14].numberTimesClicked, products[15].numberTimesClicked, products[16].numberTimesClicked, products[17].numberTimesClicked, products[18].numberTimesClicked, products[19].numberTimesClicked],
+        backgroundColor: [
+          '#183A2B',
+          '#1E4835',
+          '#235740',
+          '#29654A',
+          '#2F7455',
+          '#358260',
+          '#3B916A',
+          '#419F75',
+          '#47AE80',
+          '#51B88A',
+          '#4F57F8',
+          '#3B45F7',
+          '#0A15EB',
+          '#0812C4',
+          '#070E9D',
+          '#050B76',
+          '#040962',
+          '#03074E',
+          '#02053B',
+          '#010214',
+        ],
+        borderColor: [
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero:true
+          }
+        }]
+      }
+    }
+  });
+}
