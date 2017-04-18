@@ -4,9 +4,7 @@
   width: 100%;
   margin: 0;
   padding: 0;
-  font-size: 0;
   box-sizing: border-box;
-  border: 1px solid black;
 }
 
 .clear-fix {
@@ -20,6 +18,7 @@ html, body {
 body {
   width: 960px;
   margin: 0 auto;
+  border: none;
 }
 
 /* ==========   ========== */
@@ -31,10 +30,19 @@ body {
   margin: 5px;
   margin-top: 120px;
   float: left;
+  border: none;
 
 }
 .product-img {
   margin: 0 auto;
   height: 300px;
   width: 300px;
+  border: 2px solid black;
+}
+#tableWrap {
+  height: auto;
+  width: 960px;
+}
+h1, p {
+  display: block;
 }

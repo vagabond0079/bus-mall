@@ -94,7 +94,7 @@ function handleImg0Click(e) {
     img0.removeEventListener('click', handleImg0Click);
     img1.removeEventListener('click', handleImg1Click);
     img2.removeEventListener('click', handleImg2Click);
-    console.log('displayResults();');
+    displayResults();
   }else if(threeCycle === 3){
     for(var j = 0; j < products.length; j++){
       products[j].previouslyDisplayed = false;
@@ -129,7 +129,7 @@ function handleImg1Click(e) {
     img0.removeEventListener('click', handleImg0Click);
     img1.removeEventListener('click', handleImg1Click);
     img2.removeEventListener('click', handleImg2Click);
-    console.log('displayResults();');
+    displayResults();
   }else if(threeCycle === 3){
     for(var j = 0; j < products.length; j++){
       products[j].previouslyDisplayed = false;
@@ -164,7 +164,7 @@ function handleImg2Click(e) {
     img0.removeEventListener('click', handleImg0Click);
     img1.removeEventListener('click', handleImg1Click);
     img2.removeEventListener('click', handleImg2Click);
-    console.log('displayResults();');
+    displayResults();
   }else if(threeCycle === 3){
     for(var j = 0; j < products.length; j++){
       products[j].previouslyDisplayed = false;
@@ -198,4 +198,58 @@ img2.addEventListener('click', handleImg2Click);
 
 
 /* ========== Render List of Products with Votes Received ========== */
-function displayResults();
+function displayResults() {
+
+  for(var i = 0; i < products.length; i++){
+    var newEl = document.createElement('h2');
+    newEl.id = products[i] + 'header';
+    var newText = document.createTextNode(products[i].name);
+    newEl.appendChild(newText);
+    var position = document.getElementById('tableWrap');
+    position.appendChild(newEl);
+
+    newEl = document.createElement('p');
+    newEl.id = products[i] + 'text';
+    newText = document.createTextNode('Shown ' + products[i].numberTimesShown + ' times. ');
+    newEl.appendChild(newText);
+    newText = document.createTextNode('Clicked ' + products[i].numberTimesClicked + ' times. ');
+    newEl.appendChild(newText);
+    var percentageClicked = Math.round((products[i].numberTimesClicked / products[i].numberTimesShown) * 100);
+    newText = document.createTextNode('Clicked ' + percentageClicked + ' percent of the time');
+    newEl.appendChild(newText);
+    position = document.getElementById('tableWrap');
+    position.appendChild(newEl);
+  }
+};
+
+//   var newEl = document.createElement('table');
+//   newEl.id = 'resultsTable';
+//   var position = document.getElementById('tableWrap');
+//   position.appendChild(newEl);
+//
+//   newEl = document.createElement('thead');
+//   newEl.id = 'colHeaders';
+//   position = document.getElementById('resultsTable');
+//   position.appendChild(newEl);
+//
+//   newEl = document.createElement('tr');
+//   newEl.id = 'colHeadersRow';
+//   position = document.getElementById('colHeaders');
+//   position.appendChild(newEl);
+//
+//   newEl = document.createElement('th');
+//   newEl.className = 'firstCol';
+//   newEl.className = 'topLeft';
+//   var newText = document.createTextNode('Focus Group Result');
+//   newEl.appendChild(newText);
+//   position = document.getElementById('colHeadersRow');
+//   position.appendChild(newEl);
+//
+//   for (var i = 0; i < products.length; i++){
+//     newEl = document.createElement('th');
+//     newText = document.createTextNode(products[i].name);
+//     newEl.appendChild(newText);
+//     position = document.getElementById('colHeadersRow');
+//     position.appendChild(newEl);
+//   }
+// }
