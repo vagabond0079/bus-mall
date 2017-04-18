@@ -70,9 +70,6 @@ randomProductChooser();
 
 /* ========== Render Random Product-img ========== */
 
-/* create DOM manipulator to create elements and push the currentProductsDisplayed to the view.*/
-/* create a loop to turn all products[].previouslyDisplayed to false*/
-
 function productImageRender(){
   for(var i = 0; i < 3; i++){
     var newImg = document.createElement('img');
@@ -80,18 +77,15 @@ function productImageRender(){
     newImg.setAttribute('class', 'product-img');
     document.getElementById('img'+i).appendChild(newImg);
   }
-
-  // randomNumber = false;
-  // prevRandomNumber = false;
-  // firstRandomNumber = false;
 }
-
 productImageRender();
 
-/* ========== Click Event Handler ========== */
+/* ========== Img0 Click Event Handler ========== */
 
 function handleImg0Click(e) {
   e.preventDefault;
+
+  currentProductsDisplayed[0].numberTimesClicked++;
 
   totalClicks++;
   console.log('totalClicks is ' + totalClicks);
@@ -107,17 +101,92 @@ function handleImg0Click(e) {
     threeCycle++;
   }
 
+  for(var i = 0; i < 3; i++){
+    var removeImage = document.getElementById('img'+i);
+    while(removeImage.firstChild){
+      removeImage.removeChild(removeImage.firstChild);
+    }
+  }
+
   randomProductChooser();
   productImageRender();
 }
 
+/* ========== Img1 Click Event Handler ========== */
+
+function handleImg1Click(e) {
+  e.preventDefault;
+
+  currentProductsDisplayed[1].numberTimesClicked++;
+
+  totalClicks++;
+  console.log('totalClicks is ' + totalClicks);
+
+  if(totalClicks === 25){
+    console.log('displayResults();');
+  }else if(threeCycle === 3){
+    for(var j = 0; j < products.length; j++){
+      products[j].previouslyDisplayed = false;
+    }
+    threeCycle = 1;
+  }else{
+    threeCycle++;
+  }
+
+  for(var i = 0; i < 3; i++){
+    var removeImage = document.getElementById('img'+i);
+    while(removeImage.firstChild){
+      removeImage.removeChild(removeImage.firstChild);
+    }
+  }
+
+  randomProductChooser();
+  productImageRender();
+}
+
+/* ========== Img2 Click Event Handler ========== */
+
+function handleImg2Click(e) {
+  e.preventDefault;
+
+  currentProductsDisplayed[2].numberTimesClicked++;
+
+  totalClicks++;
+  console.log('totalClicks is ' + totalClicks);
+
+  if(totalClicks === 25){
+    console.log('displayResults();');
+  }else if(threeCycle === 3){
+    for(var j = 0; j < products.length; j++){
+      products[j].previouslyDisplayed = false;
+    }
+    threeCycle = 1;
+  }else{
+    threeCycle++;
+  }
+
+  for(var i = 0; i < 3; i++){
+    var removeImage = document.getElementById('img'+i);
+    while(removeImage.firstChild){
+      removeImage.removeChild(removeImage.firstChild);
+    }
+  }
+
+  randomProductChooser();
+  productImageRender();
+}
 
 /* ========== Event Listener ========== */
 
 var img0 = document.getElementById('img0');
 img0.addEventListener('click', handleImg0Click);
 
+var img1 = document.getElementById('img1');
+img1.addEventListener('click', handleImg1Click);
+
+var img2 = document.getElementById('img2');
+img2.addEventListener('click', handleImg2Click);
 
 
 /* ========== Render List of Products with Votes Received ========== */
-/* function displayResults();*/
+// function displayResults();
