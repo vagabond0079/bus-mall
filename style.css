@@ -1,0 +1,48 @@
+/* =========== Reset ========== */
+
+* {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.clear-fix {
+  clear: both;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  width: 960px;
+  margin: 0 auto;
+  border: none;
+}
+
+/* ==========   ========== */
+
+.img-div {
+  display: inline-block;
+  height: 305px;
+  width: 305px;
+  margin: 5px;
+  margin-top: 120px;
+  float: left;
+  border: none;
+
+}
+.product-img {
+  margin: 0 auto;
+  height: 300px;
+  width: 300px;
+  border: 2px solid black;
+}
+#tableWrap {
+  height: auto;
+  width: 960px;
+}
+h1, p {
+  display: block;
+}
