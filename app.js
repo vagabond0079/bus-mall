@@ -7,6 +7,8 @@ var currentProductsDisplayed = [];
 var randomNumber;
 var prevRandomNumber;
 var firstRandomNumber;
+var totalClicks = 0;
+var threeCycle = 1;
 
 /* ========== Product-img Object Contstructor ========== */
 
@@ -52,12 +54,12 @@ function randomProductChooser(){
   for(var i = 0; i < 3; i++){
     randomNumber = Math.floor (Math.random() * (products.length));
     console.log('randomNumber is ' + randomNumber, 'prevRandomNumber is ' + prevRandomNumber, 'firstRandomNumber is ' + firstRandomNumber);
-    if(randomNumber != prevRandomNumber && randomNumber != firstRandomNumber){
-      currentProductsDisplayed.push(products[randomNumber]);
-      products[randomNumber].previouslyDisplayed = true;
+    if(randomNumber != prevRandomNumber && randomNumber != firstRandomNumber && !products[randomNumber].previouslyDisplayed){
+      currentProductsDisplayed[i] = products[randomNumber];
       products[randomNumber].numberTimesShown++;
       firstRandomNumber = prevRandomNumber;
       prevRandomNumber = randomNumber;
+      products[randomNumber].previouslyDisplayed = true;
     } else {
       i--;
     }
@@ -78,9 +80,7 @@ function productImageRender(){
     newImg.setAttribute('class', 'product-img');
     document.getElementById('img'+i).appendChild(newImg);
   }
-  // for(var j = 0; j < products.length; j++){
-  //   products[j].previouslyDisplayed = false;
-  // }
+
   // randomNumber = false;
   // prevRandomNumber = false;
   // firstRandomNumber = false;
@@ -88,16 +88,36 @@ function productImageRender(){
 
 productImageRender();
 
-/* ========== Click Receiver ========== */
+/* ========== Click Event Handler ========== */
 
+function handleImg0Click(e) {
+  e.preventDefault;
 
+  totalClicks++;
+  console.log('totalClicks is ' + totalClicks);
 
-/* ========== Click Tracker ========== */
+  if(totalClicks === 25){
+    console.log('displayResults();');
+  }else if(threeCycle === 3){
+    for(var j = 0; j < products.length; j++){
+      products[j].previouslyDisplayed = false;
+    }
+    threeCycle = 1;
+  }else{
+    threeCycle++;
+  }
 
-/* ========== Product-img Display Tracker ========== */
+  randomProductChooser();
+  productImageRender();
+}
+
 
 /* ========== Event Listener ========== */
+
+var img0 = document.getElementById('img0');
+img0.addEventListener('click', handleImg0Click);
 
 
 
 /* ========== Render List of Products with Votes Received ========== */
+/* function displayResults();*/
