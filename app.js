@@ -1,13 +1,13 @@
 'use strict';
 
-/* ========== Global variables ========== */
+// ===== Global variables =====
 
 var currentProductsDisplayed = [];
 var totalClicks = 0;
 var threeCycle = 1;
 var randomNumber, prevRandomNumber, firstRandomNumber;
 
-/* ========== Product-img Object Contstructor ========== */
+// ===== Product-img Object Contstructor =====
 
 function Product(name, imgName, htmlId){
   this.name = name;
@@ -18,7 +18,7 @@ function Product(name, imgName, htmlId){
   this.previouslyDisplayed = false;
 }
 
-/* ========== Create Product-img Objects ========== */
+// ===== Create Product-img Objects =====
 
 var products = [
   new Product('R2D2 Rolling Suitcase', 'bag.jpg', 'bag'),
@@ -42,7 +42,7 @@ var products = [
   new Product('Reversed Watering Can', 'water-can.jpg', 'water-can'),
   new Product('Novelty Wine Glass', 'wine-glass.jpg', 'wine-glass'),];
 
-/* ========== Random Product-img Chooser ========== */
+// ===== Random Product-img Chooser =====
 
 function randomProductChooser(){
 
@@ -63,7 +63,7 @@ function randomProductChooser(){
 
 randomProductChooser();
 
-/* ========== Render Random Product-img ========== */
+// ===== Render Random Product-img =====
 
 function productImageRender(){
   for(var i = 0; i < 3; i++){
@@ -75,7 +75,28 @@ function productImageRender(){
 }
 productImageRender();
 
-/* ========== Img0 Click Event Handler ========== */
+//===== Push Data to Local Storage =====
+
+function pullFromLocalStorage() {
+
+  if(localStorage.productsArray){
+    var someNewArray = JSON.parse(localStorage.productsArray);
+    for(var i = 0; i < someNewArray.length; i++){
+      products[i].numberTimesClicked += someNewArray[i].numberTimesClicked;
+    }
+  }
+
+  if(localStorage.productsArray){
+    someNewArray = JSON.parse(localStorage.productsArray);
+    for(i = 0; i < someNewArray.length; i++){
+      products[i].numberTimesShown += someNewArray[i].numberTimesShown;
+    }
+  }
+}
+
+pullFromLocalStorage();
+
+// ===== Img0 Click Event Handler =====
 
 function handleImg0Click(e) {
   e.preventDefault;
@@ -85,6 +106,7 @@ function handleImg0Click(e) {
   totalClicks++;
 
   if(totalClicks === 25){
+    localStorage.productsArray = JSON.stringify(products);
     img0.removeEventListener('click', handleImg0Click);
     img1.removeEventListener('click', handleImg1Click);
     img2.removeEventListener('click', handleImg2Click);
@@ -105,11 +127,13 @@ function handleImg0Click(e) {
     }
   }
 
+
+
   randomProductChooser();
   productImageRender();
 }
 
-/* ========== Img1 Click Event Handler ========== */
+// ===== Img1 Click Event Handler =====
 
 function handleImg1Click(e) {
   e.preventDefault;
@@ -119,6 +143,7 @@ function handleImg1Click(e) {
   totalClicks++;
 
   if(totalClicks === 25){
+    localStorage.productsArray = JSON.stringify(products);
     img0.removeEventListener('click', handleImg0Click);
     img1.removeEventListener('click', handleImg1Click);
     img2.removeEventListener('click', handleImg2Click);
@@ -143,7 +168,7 @@ function handleImg1Click(e) {
   productImageRender();
 }
 
-/* ========== Img2 Click Event Handler ========== */
+// ===== Img2 Click Event Handler =====
 
 function handleImg2Click(e) {
   e.preventDefault;
@@ -153,6 +178,7 @@ function handleImg2Click(e) {
   totalClicks++;
 
   if(totalClicks === 25){
+    localStorage.productsArray = JSON.stringify(products);
     img0.removeEventListener('click', handleImg0Click);
     img1.removeEventListener('click', handleImg1Click);
     img2.removeEventListener('click', handleImg2Click);
@@ -177,7 +203,7 @@ function handleImg2Click(e) {
   productImageRender();
 }
 
-/* ========== Event Listener ========== */
+// ===== Event Listener =====
 
 var img0 = document.getElementById('img0');
 img0.addEventListener('click', handleImg0Click);
@@ -189,7 +215,7 @@ var img2 = document.getElementById('img2');
 img2.addEventListener('click', handleImg2Click);
 
 
-// ========== Bar Chart of Results: Votes Received ==========
+// ===== Bar Chart of Results: Votes Received =====
 
 function displayResults() {
   //create canvas element
