@@ -42,6 +42,21 @@ var products = [
   new Product('Reversed Watering Can', 'water-can.jpg', 'water-can'),
   new Product('Novelty Wine Glass', 'wine-glass.jpg', 'wine-glass'),];
 
+//===== Pull Data from Local Storage =====
+
+function pullFromLocalStorage() {
+
+  try {
+    if (localStorage.productsArray){
+      products = JSON.parse(localStorage.productsArray);
+    }
+  } catch (error) {
+    console.log('JSON error');
+  }
+}
+
+pullFromLocalStorage();
+
 // ===== Random Product-img Chooser =====
 
 function randomProductChooser(){
@@ -75,27 +90,6 @@ function productImageRender(){
 }
 productImageRender();
 
-//===== Push Data to Local Storage =====
-
-function pullFromLocalStorage() {
-
-  if(localStorage.productsArray){
-    var someNewArray = JSON.parse(localStorage.productsArray);
-    for(var i = 0; i < someNewArray.length; i++){
-      products[i].numberTimesClicked += someNewArray[i].numberTimesClicked;
-    }
-  }
-
-  if(localStorage.productsArray){
-    someNewArray = JSON.parse(localStorage.productsArray);
-    for(i = 0; i < someNewArray.length; i++){
-      products[i].numberTimesShown += someNewArray[i].numberTimesShown;
-    }
-  }
-}
-
-pullFromLocalStorage();
-
 // ===== Img0 Click Event Handler =====
 
 function handleImg0Click(e) {
@@ -126,8 +120,6 @@ function handleImg0Click(e) {
       removeImage.removeChild(removeImage.firstChild);
     }
   }
-
-
 
   randomProductChooser();
   productImageRender();
