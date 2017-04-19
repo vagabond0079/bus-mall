@@ -2,10 +2,16 @@
 
 // ===== Global variables =====
 
-var currentProductsDisplayed = [];
-var totalClicks = 0;
-var threeCycle = 1;
-var randomNumber, prevRandomNumber, firstRandomNumber;
+var state = {
+
+  currentProductsDisplayed: [],
+  totalClicks: 0,
+  threeCycle: 1,
+  randomNumber: '',
+  prevRandomNumber: '',
+  firstRandomNumber: '',
+
+};
 
 // ===== Product-img Object Contstructor =====
 
@@ -51,7 +57,7 @@ function pullFromLocalStorage() {
       products = JSON.parse(localStorage.productsArray);
     }
   } catch (error) {
-    console.log('JSON error');
+    console.log('JSON error with pullFromLocalStorage');
   }
 }
 
@@ -62,14 +68,14 @@ pullFromLocalStorage();
 function randomProductChooser(){
 
   for(var i = 0; i < 3; i++){
-    randomNumber = Math.floor (Math.random() * (products.length));
-    if(randomNumber != prevRandomNumber && randomNumber != firstRandomNumber && !products[randomNumber].previouslyDisplayed){
-      currentProductsDisplayed[i] = products[randomNumber];
-      products[randomNumber].numberTimesShown++;
+    state.randomNumber = Math.floor (Math.random() * (products.length));
+    if(state.randomNumber != state.prevRandomNumber && state.randomNumber != state.firstRandomNumber && !products[state.randomNumber].previouslyDisplayed){
+      state.currentProductsDisplayed[i] = products[state.randomNumber];
+      products[state.randomNumber].numberTimesShown++;
 
-      firstRandomNumber = prevRandomNumber;
-      prevRandomNumber = randomNumber;
-      products[randomNumber].previouslyDisplayed = true;
+      state.firstRandomNumber = state.prevRandomNumber;
+      state.prevRandomNumber = state.randomNumber;
+      products[state.randomNumber].previouslyDisplayed = true;
     } else {
       i--;
     }
@@ -83,7 +89,7 @@ randomProductChooser();
 function productImageRender(){
   for(var i = 0; i < 3; i++){
     var newImg = document.createElement('img');
-    newImg.setAttribute('src', 'img/'+currentProductsDisplayed[i].imgName);
+    newImg.setAttribute('src', 'img/'+state.currentProductsDisplayed[i].imgName);
     newImg.setAttribute('class', 'product-img');
     document.getElementById('img'+i).appendChild(newImg);
   }
@@ -95,23 +101,34 @@ productImageRender();
 function handleImg0Click(e) {
   e.preventDefault;
 
-  currentProductsDisplayed[0].numberTimesClicked++;
+  state.currentProductsDisplayed[0].numberTimesClicked++;
 
-  totalClicks++;
+  state.totalClicks++;
 
-  if(totalClicks === 25){
-    localStorage.productsArray = JSON.stringify(products);
+  if(state.totalClicks === 25){
+    try {
+      if (localStorage.productsArray){
+        localStorage.productsArray = JSON.stringify(products);
+        localStorage.globalVariables = JSON.stringify(state);
+      }
+    } catch (error) {
+      console.log('JSON error with pullFromLocalStorage');
+    }
+
     img0.removeEventListener('click', handleImg0Click);
     img1.removeEventListener('click', handleImg1Click);
     img2.removeEventListener('click', handleImg2Click);
+
     displayResults();
-  }else if(threeCycle === 3){
+
+  }else if(state.threeCycle === 3){
+
     for(var j = 0; j < products.length; j++){
       products[j].previouslyDisplayed = false;
     }
-    threeCycle = 1;
+    state.threeCycle = 1;
   }else{
-    threeCycle++;
+    state.threeCycle++;
   }
 
   for(var i = 0; i < 3; i++){
@@ -130,23 +147,34 @@ function handleImg0Click(e) {
 function handleImg1Click(e) {
   e.preventDefault;
 
-  currentProductsDisplayed[1].numberTimesClicked++;
+  state.currentProductsDisplayed[1].numberTimesClicked++;
 
-  totalClicks++;
+  state.totalClicks++;
 
-  if(totalClicks === 25){
-    localStorage.productsArray = JSON.stringify(products);
+  if(state.totalClicks === 25){
+    try {
+      if (localStorage.productsArray){
+        localStorage.productsArray = JSON.stringify(products);
+        localStorage.globalVariables = JSON.stringify(state);
+      }
+    } catch (error) {
+      console.log('JSON error with pullFromLocalStorage');
+    }
+
     img0.removeEventListener('click', handleImg0Click);
     img1.removeEventListener('click', handleImg1Click);
     img2.removeEventListener('click', handleImg2Click);
+
     displayResults();
-  }else if(threeCycle === 3){
+
+  }else if(state.threeCycle === 3){
+
     for(var j = 0; j < products.length; j++){
       products[j].previouslyDisplayed = false;
     }
-    threeCycle = 1;
+    state.threeCycle = 1;
   }else{
-    threeCycle++;
+    state.threeCycle++;
   }
 
   for(var i = 0; i < 3; i++){
@@ -165,23 +193,34 @@ function handleImg1Click(e) {
 function handleImg2Click(e) {
   e.preventDefault;
 
-  currentProductsDisplayed[2].numberTimesClicked++;
+  state.currentProductsDisplayed[2].numberTimesClicked++;
 
-  totalClicks++;
+  state.totalClicks++;
 
-  if(totalClicks === 25){
-    localStorage.productsArray = JSON.stringify(products);
+  if(state.totalClicks === 25){
+    try {
+      if (localStorage.productsArray){
+        localStorage.productsArray = JSON.stringify(products);
+        localStorage.globalVariables = JSON.stringify(state);
+      }
+    } catch (error) {
+      console.log('JSON error with pullFromLocalStorage');
+    }
+
     img0.removeEventListener('click', handleImg0Click);
     img1.removeEventListener('click', handleImg1Click);
     img2.removeEventListener('click', handleImg2Click);
+
     displayResults();
-  }else if(threeCycle === 3){
+
+  }else if(state.threeCycle === 3){
+
     for(var j = 0; j < products.length; j++){
       products[j].previouslyDisplayed = false;
     }
-    threeCycle = 1;
+    state.threeCycle = 1;
   }else{
-    threeCycle++;
+    state.threeCycle++;
   }
 
   for(var i = 0; i < 3; i++){
@@ -240,52 +279,62 @@ function displayResults() {
 
   productsToProductVotes();
 
-  //HOLD: FIGUREING OUT HOW TO HAVE LAYERED BAR GRAPHS.
-  //create array of productShows from product[i].numberTimesShown for use in chart data.
-  // var productShows = [];
-  //
-  // function productsToProductShows() {
-  //   for(var i = 0; i < products.length; i++){
-  //     productShows.push(products[i].numberTimesShown);
-  //   }
-  // }
 
-  // productsToProductShows();
+  //create array of productShows from product[i].numberTimesShown for use in chart data.
+  var productClickPercentage = [];
+
+  function productsToProductClickPercentage() {
+    for(var i = 0; i < products.length; i++){
+      productClickPercentage.push(Math.round((products[i].numberTimesClicked/products[i].numberTimesShown) * 100));
+    }
+  }
+
+  productsToProductClickPercentage();
 
   //create chart.
   var resultsChart = new Chart(ctx, {
     type: 'horizontalBar',
     data: {
       labels: productNames,
-      datasets: [{
-        label: '# of Votes',
-        data: productVotes,
-        backgroundColor: [
-          '#183A2B',
-          '#1E4835',
-          '#235740',
-          '#29654A',
-          '#2F7455',
-          '#358260',
-          '#3B916A',
-          '#419F75',
-          '#47AE80',
-          '#51B88A',
-          '#4F57F8',
-          '#3B45F7',
-          '#0A15EB',
-          '#0812C4',
-          '#070E9D',
-          '#050B76',
-          '#040962',
-          '#03074E',
-          '#02053B',
-          '#010214',
-        ],
-        borderColor: [
-        ],
-        borderWidth: 1
-      }]
+      datasets: [
+        {
+          label: '# of Votes',
+          data: productVotes,
+          backgroundColor: [
+            '#183A2B',
+            '#1E4835',
+            '#235740',
+            '#29654A',
+            '#2F7455',
+            '#358260',
+            '#3B916A',
+            '#419F75',
+            '#47AE80',
+            '#51B88A',
+            '#4F57F8',
+            '#3B45F7',
+            '#0A15EB',
+            '#0812C4',
+            '#070E9D',
+            '#050B76',
+            '#040962',
+            '#03074E',
+            '#02053B',
+            '#010214',
+          ],
+          borderColor: [
+          ],
+          borderWidth: 1
+        },
+        {
+          label: '% of Votes per Times Shown',
+          data: productClickPercentage,
+          backgroundColor: '#000000',
+          borderColor: [
+          ],
+          borderWidth: 1
+        }
+      ]
     },
     options: {
       scales: {
