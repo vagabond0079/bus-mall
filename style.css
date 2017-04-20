@@ -45,7 +45,21 @@ h3 {
 }
 canvas {
   background: #b2e4ff;
+  border: 3px solid black;
   width: 100%;
+  animation-duration: 1.5s;
+  animation-name: slidein;
+  position: fixed;
+  top: 180px;
+}
+@keyframes slidein {
+  0% {
+      top: -480px;
+  }
+  100% {
+      top: 180px;
+      z-index: 1000000;
+  }
 }
 .img-div {
   display: inline-block;

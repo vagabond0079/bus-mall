@@ -70,7 +70,7 @@ function randomProductChooser(){
 
   for(var i = 0; i < 3; i++){
     state.randomNumber = Math.floor (Math.random() * (products.length));
-    if(state.randomNumber === state.prevRandomNumber || state.randomNumber === state.firstRandomNumber || state.totalClicks-1 ===     products[state.randomNumber].previouslyDisplayed) {
+    if(state.randomNumber === state.prevRandomNumber || state.randomNumber === state.firstRandomNumber || state.totalClicks-1 === products[state.randomNumber].previouslyDisplayed) {
       i--;
     } else {
       state.currentProductsDisplayed[i] = products[state.randomNumber];
