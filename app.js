@@ -54,8 +54,8 @@ var products = [
 function pullFromLocalStorage() {
 
   try {
-    if (localStorage.productsArray){
-      products = JSON.parse(localStorage.productsArray);
+    if (localStorage.products){
+      products = JSON.parse(localStorage.products);
     }
   } catch (error) {
     console.log('JSON error with pullFromLocalStorage');
@@ -90,6 +90,12 @@ randomProductChooser();
 
 function productImageRender(){
   for(var i = 0; i < 3; i++){
+    var imgText = document.createElement('p');
+    imgText.className = 'imgText';
+    document.getElementById('img'+i).appendChild(imgText);
+    var newText = document.createTextNode(state.currentProductsDisplayed[i].name);
+    imgText.appendChild(newText);
+
     var newImg = document.createElement('img');
     newImg.setAttribute('src', 'img/'+state.currentProductsDisplayed[i].imgName);
     newImg.setAttribute('class', 'product-img');
@@ -117,8 +123,8 @@ function handleImgClick(e) {
 
   if(state.totalClicks === 25){
     try {
-      if (localStorage.productsArray){
-        localStorage.productsArray = JSON.stringify(products);
+      if (localStorage.products){
+        localStorage.products = JSON.stringify(products);
       }
     } catch (error) {
       console.log('JSON error with pullFromLocalStorage');
