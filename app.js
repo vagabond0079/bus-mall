@@ -11,6 +11,10 @@ var state = {
   firstRandomNumber: '',
 };
 
+var img0 = document.getElementById('img0');
+var img1 = document.getElementById('img1');
+var img2 = document.getElementById('img2');
+
 //===== Main Function =====
 
 function main() {
@@ -20,18 +24,11 @@ function main() {
 
   //  Event Listeners
 
-  var img0 = document.getElementById('img0');
+
   img0.addEventListener('click', handleImgClick);
-
-  var img1 = document.getElementById('img1');
   img1.addEventListener('click', handleImgClick);
-
-  var img2 = document.getElementById('img2');
   img2.addEventListener('click', handleImgClick);
-}
 
-if(document.getElementById('app')){
-  main();
 }
 
 // ===== Product-img Object Contstructor =====
@@ -64,7 +61,7 @@ var products = [
   new Product('Pet Sweep', 'pet-sweep.jpg', 'pet-sweep'),
   new Product('Pizza Scissors', 'scissors.jpg', 'scissors'),
   new Product('Shark Sleeping Bag', 'shark.jpg', 'shark'),
-  new Product('Baby Sweepwer Onesie', 'sweep.png', 'sweep'),
+  new Product('Baby Sweeper Onesie', 'sweep.png', 'sweep'),
 
   new Product('Tauntaun Sleeping Bag', 'tauntaun.jpg', 'tauntaun'),
   new Product('Unicorn Meat', 'unicorn.jpg', 'unicorn'),
@@ -372,4 +369,10 @@ function marketingTableCreate(){
   }
 }
 
-marketingTableCreate();
+if(document.getElementById('app')){
+  main();
+}
+
+if(document.getElementById('app-marketing')){
+  marketingTableCreate();
+}
