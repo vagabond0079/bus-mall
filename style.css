@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: 1px solid black;
 }
 
 .clear-fix {
@@ -53,7 +52,7 @@ body {
   object-fit: cover;
   border: 3px solid black;
 }
-#tableWrap {
+#chartWrap {
   height: auto;
   width: 960px;
 }
