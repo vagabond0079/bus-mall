@@ -108,5 +108,38 @@ canvas {
   text-align: center;
   font-size: 24px;
   color: black;
+}
 
+table, thead, th, tr, td {
+  border: 2px solid black;
+}
+
+th, td {
+  width: 25px;
+  text-align: center;
+  background-color: white;
+  opacity: .5;
+}
+
+th {
+  background-color: darkblue;
+  color: white;
+  opacity: 1;
+}
+
+.first-row {
+  width: 150px;
+  text-align: left;
+  color: darkblue;
+  font-weight: bold;
+}
+.recommend-yes {
+  background-color: #2F7455;
+  color: black;
+  font-weight: bold;
+}
+.recommend-no {
+  background-color: darkred;
+  color: black;
+  font-weight: bold;
 }

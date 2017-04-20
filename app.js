@@ -11,6 +11,29 @@ var state = {
   firstRandomNumber: '',
 };
 
+//===== Main Function =====
+
+function main() {
+  pullFromLocalStorage();
+  randomProductChooser();
+  productImageRender();
+
+  //  Event Listeners
+
+  var img0 = document.getElementById('img0');
+  img0.addEventListener('click', handleImgClick);
+
+  var img1 = document.getElementById('img1');
+  img1.addEventListener('click', handleImgClick);
+
+  var img2 = document.getElementById('img2');
+  img2.addEventListener('click', handleImgClick);
+}
+
+if(document.getElementById('app')){
+  main();
+}
+
 // ===== Product-img Object Contstructor =====
 
 function Product(name, imgName, htmlId){
@@ -62,8 +85,6 @@ function pullFromLocalStorage() {
   }
 }
 
-pullFromLocalStorage();
-
 // ===== Random Product-img Chooser =====
 
 function randomProductChooser(){
@@ -82,8 +103,6 @@ function randomProductChooser(){
   }
 }
 
-randomProductChooser();
-
 // ===== Render Random Product-img =====
 
 function productImageRender(){
@@ -100,7 +119,6 @@ function productImageRender(){
     document.getElementById('img'+i).appendChild(newImg);
   }
 }
-productImageRender();
 
 // ===== Img Click Event Handler =====
 
@@ -144,18 +162,6 @@ function handleImgClick(e) {
     productImageRender();
   }
 }
-
-// ===== Event Listener =====
-
-var img0 = document.getElementById('img0');
-img0.addEventListener('click', handleImgClick);
-
-var img1 = document.getElementById('img1');
-img1.addEventListener('click', handleImgClick);
-
-var img2 = document.getElementById('img2');
-img2.addEventListener('click', handleImgClick);
-
 
 // ===== Bar Chart of Results: Votes Received =====
 
@@ -260,3 +266,110 @@ function displayResults() {
     }
   });
 }
+
+//===== Create Marketing Report Table =====
+function marketingTableCreate(){
+
+  pullFromLocalStorage();
+
+  var productClickPercentage = [];
+
+  function productsToProductClickPercentage() {
+    for(var i = 0; i < products.length; i++){
+      productClickPercentage.push(Math.round((products[i].numberTimesClicked/products[i].numberTimesShown) * 100));
+    }
+  }
+
+  productsToProductClickPercentage();
+
+  console.log('it works');
+  var marketingTable = document.createElement('table');
+  var tableWrap = document.getElementById('tableWrap');
+  var marketingTableHeader = document.createElement('thead');
+  var marketingTableTopRow = document.createElement('tr');
+
+  tableWrap.appendChild(marketingTable);
+  marketingTable.appendChild(marketingTableHeader);
+  marketingTableHeader.appendChild(marketingTableTopRow);
+
+  for(var i = 0; i < 5; i++){
+    var marketingTableColumnHeaders = document.createElement('th');
+    marketingTableColumnHeaders.id = 'header-'+i;
+    marketingTableTopRow.appendChild(marketingTableColumnHeaders);
+  }
+
+  var header0 = document.getElementById('header-0');
+  var header0Text = document.createTextNode('Item Name');
+  header0.appendChild(header0Text);
+
+  var header1 = document.getElementById('header-1');
+  var header1Text = document.createTextNode('Total Times Shown');
+  header1.appendChild(header1Text);
+
+  var header2 = document.getElementById('header-2');
+  var header2Text = document.createTextNode('Total Times Clicked');
+  header2.appendChild(header2Text);
+
+  var header3 = document.getElementById('header-3');
+  var header3Text = document.createTextNode('% Clicked per Time Shown');
+  header3.appendChild(header3Text);
+
+  var header4 = document.getElementById('header-4');
+  var header4Text = document.createTextNode('Recommended?');
+  header4.appendChild(header4Text);
+
+  for(i = 0; i < products.length; i++){
+    var marketingTableDataRow = document.createElement('tr');
+    marketingTableDataRow.id = 'row '+i;
+    marketingTableHeader.appendChild(marketingTableDataRow);
+  }
+
+  for(i = 0; i < products.length; i++){
+    var marketingTableDataCell = document.createElement('td');
+    marketingTableDataCell.className = 'first-row';
+    var row = document.getElementById('row '+i);
+    var marketingTableDataCellText = document.createTextNode(products[i].name);
+    marketingTableDataCell.appendChild(marketingTableDataCellText);
+    row.appendChild(marketingTableDataCell);
+  }
+
+  for(i = 0; i < products.length; i++){
+    marketingTableDataCell = document.createElement('td');
+    row = document.getElementById('row '+i);
+    marketingTableDataCellText = document.createTextNode(products[i].numberTimesShown);
+    marketingTableDataCell.appendChild(marketingTableDataCellText);
+    row.appendChild(marketingTableDataCell);
+  }
+
+  for(i = 0; i < products.length; i++){
+    marketingTableDataCell = document.createElement('td');
+    row = document.getElementById('row '+i);
+    marketingTableDataCellText = document.createTextNode(products[i].numberTimesClicked);
+    marketingTableDataCell.appendChild(marketingTableDataCellText);
+    row.appendChild(marketingTableDataCell);
+  }
+
+  for(i = 0; i < products.length; i++){
+    marketingTableDataCell = document.createElement('td');
+    row = document.getElementById('row '+i);
+    marketingTableDataCellText = document.createTextNode(productClickPercentage[[i]]+'%');
+    marketingTableDataCell.appendChild(marketingTableDataCellText);
+    row.appendChild(marketingTableDataCell);
+  }
+
+  for(i = 0; i < products.length; i++){
+    marketingTableDataCell = document.createElement('td');
+    row = document.getElementById('row '+i);
+    if(productClickPercentage[i]>.50){
+      marketingTableDataCellText = document.createTextNode('YES');
+      marketingTableDataCell.className = 'recommend-yes';
+    } else {
+      marketingTableDataCellText = document.createTextNode('NO');
+      marketingTableDataCell.className = 'recommend-no';
+    }
+    marketingTableDataCell.appendChild(marketingTableDataCellText);
+    row.appendChild(marketingTableDataCell);
+  }
+}
+
+marketingTableCreate();
