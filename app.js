@@ -70,8 +70,6 @@ function randomProductChooser(){
 
   for(var i = 0; i < 3; i++){
     state.randomNumber = Math.floor (Math.random() * (products.length));
-    console.log('totaleclicks minus 1', state.totalClicks-1);
-    console.log('previously Displayed', products[state.randomNumber].previouslyDisplayed);
     if(state.randomNumber === state.prevRandomNumber || state.randomNumber === state.firstRandomNumber || state.totalClicks-1 ===     products[state.randomNumber].previouslyDisplayed) {
       i--;
     } else {
@@ -123,11 +121,9 @@ function handleImgClick(e) {
 
   if(state.totalClicks === 25){
     try {
-      if (localStorage.products){
-        localStorage.products = JSON.stringify(products);
-      }
+      localStorage.products = JSON.stringify(products);
     } catch (error) {
-      console.log('JSON error with pullFromLocalStorage');
+      console.log('JSON error with handleImgClick');
     }
 
     img0.removeEventListener('click', handleImgClick);
@@ -226,16 +222,16 @@ function displayResults() {
             '#419F75',
             '#47AE80',
             '#51B88A',
-            '#4F57F8',
-            '#3B45F7',
-            '#0A15EB',
-            '#0812C4',
-            '#070E9D',
-            '#050B76',
-            '#040962',
-            '#03074E',
-            '#02053B',
-            '#010214',
+            '#51B88A',
+            '#47AE80',
+            '#419F75',
+            '#3B916A',
+            '#358260',
+            '#2F7455',
+            '#29654A',
+            '#235740',
+            '#1E4835',
+            '#183A2B',
           ],
           borderColor: [
           ],
