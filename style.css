@@ -1,10 +1,9 @@
-/* =========== Reset ========== */
-
 * {
   width: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /*border: 1px solid black;*/
 }
 
 .clear-fix {
@@ -19,34 +18,61 @@ body {
   width: 960px;
   margin: 0 auto;
   border: none;
+  background: #1e92d1;
 }
-
-/* ==========   ========== */
 
 .img-div {
   display: inline-block;
-  height: 305px;
-  width: 305px;
+  height: 300px;
+  width: 300px;
   margin: 5px;
   margin-top: 120px;
-  float: left;
+  float: right;
   border: none;
+  overflow: hidden;
 
 }
 .product-img {
   margin: 0 auto;
-  height: 300px;
+  height: auto;
   width: 300px;
-  border: 2px solid black;
+  overflow: hidden;
+  object-fit: cover;
+  border: 3px solid black;
 }
 #tableWrap {
   height: auto;
   width: 960px;
 }
+#bus-icon {
+  height: 120px;
+  width: 120px;
+  display: inline-block;
+  float: left;
+  margin-top: 40px;
+}
+.img-text {
+  text-align: center;
+  font-size: 24px;
+
+}
 h1, p {
   display: block;
 }
+h1 {
+  width: 835px;
+  display: inline-block;
+  font-size: 72px;
+  margin-top: 50px;
+  float: right;
+}
+h3 {
+  width: 835px;
+  display: inline-block;
+  font-size: 24px;
+  float: right;
+}
 canvas {
-  background: white;
+  background: #b2e4ff;
   width: 100%;
 }

@@ -108,7 +108,6 @@ function handleImg0Click(e) {
     try {
       if (localStorage.productsArray){
         localStorage.productsArray = JSON.stringify(products);
-        // localStorage.globalVariables = JSON.stringify(state);
       }
     } catch (error) {
       console.log('JSON error with pullFromLocalStorage');
