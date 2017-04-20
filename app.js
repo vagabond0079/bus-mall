@@ -6,11 +6,9 @@ var state = {
 
   currentProductsDisplayed: [],
   totalClicks: 0,
-  threeCycle: 1,
   randomNumber: '',
   prevRandomNumber: '',
   firstRandomNumber: '',
-
 };
 
 // ===== Product-img Object Contstructor =====
@@ -21,7 +19,7 @@ function Product(name, imgName, htmlId){
   this.numberTimesShown = 0;
   this.numberTimesClicked = 0;
   this.htmlId = htmlId;
-  this.previouslyDisplayed = false;
+  this.previouslyDisplayed = 99;
 }
 
 // ===== Create Product-img Objects =====
@@ -69,15 +67,16 @@ function randomProductChooser(){
 
   for(var i = 0; i < 3; i++){
     state.randomNumber = Math.floor (Math.random() * (products.length));
-    if(state.randomNumber != state.prevRandomNumber && state.randomNumber != state.firstRandomNumber && !products[state.randomNumber].previouslyDisplayed){
+    console.log('totaleclicks minus 1', state.totalClicks-1);
+    console.log('previously Displayed', products[state.randomNumber].previouslyDisplayed);
+    if(state.randomNumber === state.prevRandomNumber || state.randomNumber === state.firstRandomNumber || state.totalClicks-1 ===     products[state.randomNumber].previouslyDisplayed) {
+      i--;
+    } else {
       state.currentProductsDisplayed[i] = products[state.randomNumber];
       products[state.randomNumber].numberTimesShown++;
-
+      products[state.randomNumber].previouslyDisplayed = state.totalClicks;
       state.firstRandomNumber = state.prevRandomNumber;
       state.prevRandomNumber = state.randomNumber;
-      products[state.randomNumber].previouslyDisplayed = true;
-    } else {
-      i--;
     }
   }
 }
@@ -109,7 +108,7 @@ function handleImg0Click(e) {
     try {
       if (localStorage.productsArray){
         localStorage.productsArray = JSON.stringify(products);
-        localStorage.globalVariables = JSON.stringify(state);
+        // localStorage.globalVariables = JSON.stringify(state);
       }
     } catch (error) {
       console.log('JSON error with pullFromLocalStorage');
@@ -121,25 +120,17 @@ function handleImg0Click(e) {
 
     displayResults();
 
-  }else if(state.threeCycle === 3){
-
-    for(var j = 0; j < products.length; j++){
-      products[j].previouslyDisplayed = false;
+  }else {
+    for(var i = 0; i < 3; i++){
+      var removeImage = document.getElementById('img'+i);
+      while(removeImage.firstChild){
+        removeImage.removeChild(removeImage.firstChild);
+      }
     }
-    state.threeCycle = 1;
-  }else{
-    state.threeCycle++;
-  }
 
-  for(var i = 0; i < 3; i++){
-    var removeImage = document.getElementById('img'+i);
-    while(removeImage.firstChild){
-      removeImage.removeChild(removeImage.firstChild);
-    }
+    randomProductChooser();
+    productImageRender();
   }
-
-  randomProductChooser();
-  productImageRender();
 }
 
 // ===== Img1 Click Event Handler =====
@@ -167,25 +158,17 @@ function handleImg1Click(e) {
 
     displayResults();
 
-  }else if(state.threeCycle === 3){
-
-    for(var j = 0; j < products.length; j++){
-      products[j].previouslyDisplayed = false;
+  }else {
+    for(var i = 0; i < 3; i++){
+      var removeImage = document.getElementById('img'+i);
+      while(removeImage.firstChild){
+        removeImage.removeChild(removeImage.firstChild);
+      }
     }
-    state.threeCycle = 1;
-  }else{
-    state.threeCycle++;
-  }
 
-  for(var i = 0; i < 3; i++){
-    var removeImage = document.getElementById('img'+i);
-    while(removeImage.firstChild){
-      removeImage.removeChild(removeImage.firstChild);
-    }
+    randomProductChooser();
+    productImageRender();
   }
-
-  randomProductChooser();
-  productImageRender();
 }
 
 // ===== Img2 Click Event Handler =====
@@ -213,25 +196,17 @@ function handleImg2Click(e) {
 
     displayResults();
 
-  }else if(state.threeCycle === 3){
-
-    for(var j = 0; j < products.length; j++){
-      products[j].previouslyDisplayed = false;
+  }else {
+    for(var i = 0; i < 3; i++){
+      var removeImage = document.getElementById('img'+i);
+      while(removeImage.firstChild){
+        removeImage.removeChild(removeImage.firstChild);
+      }
     }
-    state.threeCycle = 1;
-  }else{
-    state.threeCycle++;
-  }
 
-  for(var i = 0; i < 3; i++){
-    var removeImage = document.getElementById('img'+i);
-    while(removeImage.firstChild){
-      removeImage.removeChild(removeImage.firstChild);
-    }
+    randomProductChooser();
+    productImageRender();
   }
-
-  randomProductChooser();
-  productImageRender();
 }
 
 // ===== Event Listener =====
