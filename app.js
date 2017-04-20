@@ -30,16 +30,19 @@ var products = [
   new Product('Bathroom iPad Holder', 'bathroom.jpg', 'bathroom'),
   new Product('Toe-less Boots', 'boots.jpg', 'boots'),
   new Product('All-in-One Breakfast Station', 'breakfast.jpg', 'breakfast'),
+
   new Product('Italian Meatball Bubblegum', 'bubblegum.jpg', 'bubblegum'),
   new Product('Humpback Chair', 'chair.jpg', 'chair'),
   new Product('Cthulu Figure', 'cthulhu.jpg', 'cthulu'),
   new Product('Duck Mask for Dogs', 'dog-duck.jpg', 'dog-duck'),
   new Product('Dragon Meat', 'dragon.jpg', 'dragon'),
+
   new Product('Pen Cap Flatware', 'pen.jpg', 'pen'),
   new Product('Pet Sweep', 'pet-sweep.jpg', 'pet-sweep'),
   new Product('Pizza Scissors', 'scissors.jpg', 'scissors'),
   new Product('Shark Sleeping Bag', 'shark.jpg', 'shark'),
   new Product('Baby Sweepwer Onesie', 'sweep.png', 'sweep'),
+
   new Product('Tauntaun Sleeping Bag', 'tauntaun.jpg', 'tauntaun'),
   new Product('Unicorn Meat', 'unicorn.jpg', 'unicorn'),
   new Product('Tentacle USB Flash Drive', 'usb.gif', 'usb'),
@@ -95,49 +98,20 @@ function productImageRender(){
 }
 productImageRender();
 
-// ===== Img0 Click Event Handler =====
+// ===== Img Click Event Handler =====
 
-function handleImg0Click(e) {
+function handleImgClick(e) {
   e.preventDefault;
 
-  state.currentProductsDisplayed[0].numberTimesClicked++;
-
-  state.totalClicks++;
-
-  if(state.totalClicks === 25){
-    try {
-      if (localStorage.productsArray){
-        localStorage.productsArray = JSON.stringify(products);
-      }
-    } catch (error) {
-      console.log('JSON error with pullFromLocalStorage');
-    }
-
-    img0.removeEventListener('click', handleImg0Click);
-    img1.removeEventListener('click', handleImg1Click);
-    img2.removeEventListener('click', handleImg2Click);
-
-    displayResults();
-
-  }else {
-    for(var i = 0; i < 3; i++){
-      var removeImage = document.getElementById('img'+i);
-      while(removeImage.firstChild){
-        removeImage.removeChild(removeImage.firstChild);
-      }
-    }
-
-    randomProductChooser();
-    productImageRender();
+  if(e.target === img0){
+    var i = 0;
+  } else if (e.target === img1){
+    i = 1;
+  } else {
+    i = 2;
   }
-}
 
-// ===== Img1 Click Event Handler =====
-
-function handleImg1Click(e) {
-  e.preventDefault;
-
-  state.currentProductsDisplayed[1].numberTimesClicked++;
+  state.currentProductsDisplayed[i].numberTimesClicked++;
 
   state.totalClicks++;
 
@@ -145,59 +119,20 @@ function handleImg1Click(e) {
     try {
       if (localStorage.productsArray){
         localStorage.productsArray = JSON.stringify(products);
-        localStorage.globalVariables = JSON.stringify(state);
       }
     } catch (error) {
       console.log('JSON error with pullFromLocalStorage');
     }
 
-    img0.removeEventListener('click', handleImg0Click);
-    img1.removeEventListener('click', handleImg1Click);
-    img2.removeEventListener('click', handleImg2Click);
+    img0.removeEventListener('click', handleImgClick);
+    img1.removeEventListener('click', handleImgClick);
+    img2.removeEventListener('click', handleImgClick);
 
     displayResults();
 
   }else {
-    for(var i = 0; i < 3; i++){
-      var removeImage = document.getElementById('img'+i);
-      while(removeImage.firstChild){
-        removeImage.removeChild(removeImage.firstChild);
-      }
-    }
-
-    randomProductChooser();
-    productImageRender();
-  }
-}
-
-// ===== Img2 Click Event Handler =====
-
-function handleImg2Click(e) {
-  e.preventDefault;
-
-  state.currentProductsDisplayed[2].numberTimesClicked++;
-
-  state.totalClicks++;
-
-  if(state.totalClicks === 25){
-    try {
-      if (localStorage.productsArray){
-        localStorage.productsArray = JSON.stringify(products);
-        localStorage.globalVariables = JSON.stringify(state);
-      }
-    } catch (error) {
-      console.log('JSON error with pullFromLocalStorage');
-    }
-
-    img0.removeEventListener('click', handleImg0Click);
-    img1.removeEventListener('click', handleImg1Click);
-    img2.removeEventListener('click', handleImg2Click);
-
-    displayResults();
-
-  }else {
-    for(var i = 0; i < 3; i++){
-      var removeImage = document.getElementById('img'+i);
+    for( var j = 0; j < 3; j++){
+      var removeImage = document.getElementById('img'+j);
       while(removeImage.firstChild){
         removeImage.removeChild(removeImage.firstChild);
       }
@@ -211,13 +146,13 @@ function handleImg2Click(e) {
 // ===== Event Listener =====
 
 var img0 = document.getElementById('img0');
-img0.addEventListener('click', handleImg0Click);
+img0.addEventListener('click', handleImgClick);
 
 var img1 = document.getElementById('img1');
-img1.addEventListener('click', handleImg1Click);
+img1.addEventListener('click', handleImgClick);
 
 var img2 = document.getElementById('img2');
-img2.addEventListener('click', handleImg2Click);
+img2.addEventListener('click', handleImgClick);
 
 
 // ===== Bar Chart of Results: Votes Received =====
