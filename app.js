@@ -53,7 +53,6 @@ function randomProductChooser(){
 
   for(var i = 0; i < 3; i++){
     randomNumber = Math.floor (Math.random() * (products.length));
-    console.log('randomNumber is ' + randomNumber, 'prevRandomNumber is ' + prevRandomNumber, 'firstRandomNumber is ' + firstRandomNumber);
     if(randomNumber != prevRandomNumber && randomNumber != firstRandomNumber && !products[randomNumber].previouslyDisplayed){
       currentProductsDisplayed[i] = products[randomNumber];
       products[randomNumber].numberTimesShown++;
@@ -88,7 +87,6 @@ function handleImg0Click(e) {
   currentProductsDisplayed[0].numberTimesClicked++;
 
   totalClicks++;
-  console.log('totalClicks is ' + totalClicks);
 
   if(totalClicks === 25){
     img0.removeEventListener('click', handleImg0Click);
@@ -123,7 +121,6 @@ function handleImg1Click(e) {
   currentProductsDisplayed[1].numberTimesClicked++;
 
   totalClicks++;
-  console.log('totalClicks is ' + totalClicks);
 
   if(totalClicks === 25){
     img0.removeEventListener('click', handleImg0Click);
@@ -158,7 +155,6 @@ function handleImg2Click(e) {
   currentProductsDisplayed[2].numberTimesClicked++;
 
   totalClicks++;
-  console.log('totalClicks is ' + totalClicks);
 
   if(totalClicks === 25){
     img0.removeEventListener('click', handleImg0Click);
@@ -220,36 +216,4 @@ function displayResults() {
     position = document.getElementById('tableWrap');
     position.appendChild(newEl);
   }
-};
-
-//   var newEl = document.createElement('table');
-//   newEl.id = 'resultsTable';
-//   var position = document.getElementById('tableWrap');
-//   position.appendChild(newEl);
-//
-//   newEl = document.createElement('thead');
-//   newEl.id = 'colHeaders';
-//   position = document.getElementById('resultsTable');
-//   position.appendChild(newEl);
-//
-//   newEl = document.createElement('tr');
-//   newEl.id = 'colHeadersRow';
-//   position = document.getElementById('colHeaders');
-//   position.appendChild(newEl);
-//
-//   newEl = document.createElement('th');
-//   newEl.className = 'firstCol';
-//   newEl.className = 'topLeft';
-//   var newText = document.createTextNode('Focus Group Result');
-//   newEl.appendChild(newText);
-//   position = document.getElementById('colHeadersRow');
-//   position.appendChild(newEl);
-//
-//   for (var i = 0; i < products.length; i++){
-//     newEl = document.createElement('th');
-//     newText = document.createTextNode(products[i].name);
-//     newEl.appendChild(newText);
-//     position = document.getElementById('colHeadersRow');
-//     position.appendChild(newEl);
-//   }
-// }
+}
