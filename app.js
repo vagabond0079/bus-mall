@@ -122,8 +122,6 @@ function productImageRender(){
 
 function handleImgClick(e) {
   e.preventDefault;
-  console.log(e);
-  console.log(e.target);
   //
   if(e.currentTarget === img0){
     state.currentProductsDisplayed[0].numberTimesClicked++;
@@ -294,7 +292,6 @@ function marketingTableCreate(){
 
   productsToProductClickPercentage();
 
-  console.log('it works');
   var marketingTable = document.createElement('table');
   var tableWrap = document.getElementById('tableWrap');
   var marketingTableHeader = document.createElement('thead');
@@ -310,25 +307,13 @@ function marketingTableCreate(){
     marketingTableTopRow.appendChild(marketingTableColumnHeaders);
   }
 
-  var header0 = document.getElementById('header-0');
-  var header0Text = document.createTextNode('Item Name');
-  header0.appendChild(header0Text);
+  var columnLabels = ['Item Name', 'Total Times Shown', 'Total Times Clicked', '% Clicked per Time Shown', 'Recommended?'];
 
-  var header1 = document.getElementById('header-1');
-  var header1Text = document.createTextNode('Total Times Shown');
-  header1.appendChild(header1Text);
-
-  var header2 = document.getElementById('header-2');
-  var header2Text = document.createTextNode('Total Times Clicked');
-  header2.appendChild(header2Text);
-
-  var header3 = document.getElementById('header-3');
-  var header3Text = document.createTextNode('% Clicked per Time Shown');
-  header3.appendChild(header3Text);
-
-  var header4 = document.getElementById('header-4');
-  var header4Text = document.createTextNode('Recommended?');
-  header4.appendChild(header4Text);
+  for(i = 0; i < 5; i++){
+    var header = document.getElementById('header-'+i);
+    var headerText = document.createTextNode(columnLabels[i]);
+    header.appendChild(headerText);
+  }
 
   for(i = 0; i < products.length; i++){
     var marketingTableDataRow = document.createElement('tr');
