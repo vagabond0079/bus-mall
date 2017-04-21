@@ -67,7 +67,8 @@ var products = [
   new Product('Unicorn Meat', 'unicorn.jpg', 'unicorn'),
   new Product('Tentacle USB Flash Drive', 'usb.gif', 'usb'),
   new Product('Reversed Watering Can', 'water-can.jpg', 'water-can'),
-  new Product('Novelty Wine Glass', 'wine-glass.jpg', 'wine-glass'),];
+  new Product('Novelty Wine Glass', 'wine-glass.jpg', 'wine-glass'),
+];
 
 //===== Pull Data from Local Storage =====
 
@@ -92,8 +93,8 @@ function randomProductChooser(){
       i--;
     } else {
       state.currentProductsDisplayed[i] = products[state.randomNumber];
-      products[state.randomNumber].numberTimesShown++;
-      products[state.randomNumber].previouslyDisplayed = state.totalClicks;
+      state.currentProductsDisplayed[i].numberTimesShown++;
+      state.currentProductsDisplayed[i].previouslyDisplayed = state.totalClicks;
       state.firstRandomNumber = state.prevRandomNumber;
       state.prevRandomNumber = state.randomNumber;
     }
@@ -121,16 +122,16 @@ function productImageRender(){
 
 function handleImgClick(e) {
   e.preventDefault;
-
-  if(e.target === img0){
-    var i = 0;
-  } else if (e.target === img1){
-    i = 1;
+  console.log(e);
+  console.log(e.target);
+  //
+  if(e.currentTarget === img0){
+    state.currentProductsDisplayed[0].numberTimesClicked++;
+  } else if (e.currentTarget === img1){
+    state.currentProductsDisplayed[1].numberTimesClicked++;
   } else {
-    i = 2;
+    state.currentProductsDisplayed[2].numberTimesClicked++;
   }
-
-  state.currentProductsDisplayed[i].numberTimesClicked++;
 
   state.totalClicks++;
 
@@ -146,6 +147,7 @@ function handleImgClick(e) {
     img2.removeEventListener('click', handleImgClick);
 
     displayResults();
+    marketingTableReportButton();
 
   }else {
     for( var j = 0; j < 3; j++){
@@ -186,6 +188,7 @@ function displayResults() {
   var productVotes = [];
 
   function productsToProductVotes() {
+    productVotes.length = 0;
     for(var i = 0; i < products.length; i++){
       productVotes.push(products[i].numberTimesClicked);
     }
@@ -262,6 +265,18 @@ function displayResults() {
       }
     }
   });
+}
+
+//===== Create Marketing Report Button =====
+
+function marketingTableReportButton(){
+  var app = document.getElementById('app');
+  var marketingTableButton = document.createElement('button');
+  marketingTableButton.id = 'marketingTableButton';
+  marketingTableButton.setAttribute('onclick', 'window.open("marketing-table.html")');
+  var newText = document.createTextNode('See Marketing Report');
+  marketingTableButton.appendChild(newText);
+  app.insertBefore(marketingTableButton, app.childNodes[0]);
 }
 
 //===== Create Marketing Report Table =====
@@ -357,7 +372,7 @@ function marketingTableCreate(){
   for(i = 0; i < products.length; i++){
     marketingTableDataCell = document.createElement('td');
     row = document.getElementById('row '+i);
-    if(productClickPercentage[i]>.50){
+    if(productClickPercentage[i]>30){
       marketingTableDataCellText = document.createTextNode('YES');
       marketingTableDataCell.className = 'recommend-yes';
     } else {

@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<!-- saved from url=(0100)http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>javascript - How can I make a button redirect my page to another page? - Stack Overflow</title>
+    <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">
+
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="How can I make a button redirect my page to another page?">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I have been trying the following:
+
+&amp;lt;form action=&quot;/home&quot; class=&quot;inline&quot;&amp;gt;
+    &amp;lt;button class=&quot;float-left submit-button&quot; &amp;gt;Home&amp;lt;/button&amp;gt;
+&amp;lt;/form&amp;gt;
+It seems to work but it goes to ...">
+    <meta property="og:url" content="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page">
+    <link rel="canonical" href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page">
+
+    
+    
+    <script type="text/javascript" async="" src="http://engine.adzerk.net/ados?t=1492729407414&amp;request={%22Placements%22:[{%22A%22:22,%22S%22:8277,%22D%22:%22adzerk836698203%22,%22AT%22:4,%22Z%22:[43]},{%22A%22:22,%22S%22:8277,%22D%22:%22adzerk1501825875%22,%22AT%22:4,%22Z%22:[44]},{%22A%22:22,%22S%22:8277,%22D%22:%22adzerk2018484344%22,%22ATA%22:[5,17,2221,1129,43],%22Z%22:[45]}],%22Keywords%22:%22javascript%2Cjquery%2Chtml%2Cx-persona-frontend%22,%22Referrer%22:%22https%3A%2F%2Fwww.google.com%2F%22,%22IsAsync%22:true}"></script><script async="" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/quant.js"></script><script async="" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/beacon.js"></script><script async="" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/analytics.js"></script><script type="text/javascript" async="" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/ados.js"></script><script src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/all.css">
+
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:2,shownCommentCount:2,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:16562577});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '16562577');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text', true); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1492729405,"routeName":"Questions/Show","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableInsertDocLinkDialog":true,"childUrl":"https://meta.stackoverflow.com","enableSocialMediaInSharePopup":true,"protocol":"http"},"user":{"fkey":"6bf42bede6595179d9426ec7498a744e","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"canSeeNewHeaderDesign":true},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableNewLinkInsertDialog":true,"enableImgurHttps":true,"forceHttpsImages":true},"comments":{},"userProfile":{"openGraphAPIKey":"58740831ad23540e00c58987"},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"ef5add8eb513","js/moderator.en.js":"a21527cce4e3","js/full-anon.en.js":"4c112588806a","js/full.en.js":"8c8b6cf63e93","js/wmd.en.js":"cfb2172dd8e4","js/third-party/jquery.autocomplete.min.js":"d3b8fa7fdf74","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"c37948fe0a99","js/help.en.js":"677da064451a","js/tageditor.en.js":"cb8f10d49739","js/tageditornew.en.js":"f8b650ef270a","js/inline-tag-editing.en.js":"2ddfa79492e7","js/revisions.en.js":"2faaeaae2529","js/review.en.js":"644a1584f1a7","js/tagsuggestions.en.js":"ddb0e41afe26","js/post-validation.en.js":"16a020eeeb13","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"94ea2574d95d","js/keyboard-shortcuts.en.js":"d97388b1ad0c","js/external-editor.en.js":"e574ed908cf3","js/adops.en.js":"9a6a7812a212","js/external-editor.en.js":"e574ed908cf3","js/snippet-javascript.en.js":"9ba1796a308e","js/snippet-javascript-codemirror.en.js":"e1c779784762"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    <noscript id="noscript-css">&lt;style type="text/css"&gt;body,.so-header{margin-top:1.9em}&lt;/style&gt;</noscript>
+<script async="" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/full-anon.en.js"></script><script async="" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/prettify-full.en.js"></script><script type="text/javascript" src="http://static.adzerk.net/Extensions/adFeedback.js"></script><link rel="stylesheet" href="http://static.adzerk.net/Extensions/adFeedback.css"><link rel="stylesheet" href="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/jobs-multi.min.css" type="text/css"></head>
+<body class="question-page new-topbar">
+            <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+<header class="so-header js-so-header _fixed _scrolling">
+    <div class="-container">
+        <div class="-main">            
+            <a href="http://stackoverflow.com/" class="-logo ">
+                <span class="-img">Stack Overflow</span>
+            </a>
+
+            <nav class="navigation" role="navigation" aria-label="site navigation">
+                <ol class="-list">
+                        <li class="-item _current">
+        <a id="nav-questions" href="http://stackoverflow.com/questions" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">Questions</a>
+    </li>
+
+    <li class="-item">
+        <a id="nav-jobs" href="http://stackoverflow.com/jobs?med=site-ui&amp;ref=jobs-tab" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:6})">Jobs</a>
+    </li>
+                        <li class="-item">
+        <a id="nav-docs" href="http://stackoverflow.com/documentation" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:7})">Documentation <small class="beta-badge">beta</small></a>
+    </li>
+                        <li class="-item">
+        <a id="nav-tags" href="http://stackoverflow.com/tags" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">Tags</a>
+    </li>
+
+                        <li class="-item">
+        <a id="nav-users" href="http://stackoverflow.com/users" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">Users</a>
+    </li>
+
+                </ol>
+            </nav>
+
+            <form id="search" action="http://stackoverflow.com/search" method="get" class="searchbar" autocomplete="off" role="search">
+                <svg viewBox="0 0 18 18" width="18" height="18" role="icon"><path fill-rule="evenodd" d="M12.864 11.32h-.813l-.288-.277A6.66 6.66 0 0 0 13.38 6.69a6.69 6.69 0 1 0-6.69 6.69 6.66 6.66 0 0 0 4.354-1.617l.278.288v.813L16.467 18 18 16.467l-5.136-5.146zm-6.174 0a4.625 4.625 0 0 1-4.632-4.63A4.625 4.625 0 0 1 6.69 2.058a4.625 4.625 0 0 1 4.63 4.632 4.625 4.625 0 0 1-4.63 4.63z"></path></svg>
+                <input name="q" type="text" placeholder="Search..." value="" tabindex="1" autocomplete="off" maxlength="240" class="f-input js-search-field">
+                <button type="submit" class="btn js-search-submit">
+                    <svg viewBox="0 0 18 18" width="18" height="18" role="icon"><path fill-rule="evenodd" d="M12.864 11.32h-.813l-.288-.277A6.66 6.66 0 0 0 13.38 6.69a6.69 6.69 0 1 0-6.69 6.69 6.66 6.66 0 0 0 4.354-1.617l.278.288v.813L16.467 18 18 16.467l-5.136-5.146zm-6.174 0a4.625 4.625 0 0 1-4.632-4.63A4.625 4.625 0 0 1 6.69 2.058a4.625 4.625 0 0 1 4.63 4.632 4.625 4.625 0 0 1-4.63 4.63z"></path></svg>
+                </button>
+            </form>
+
+        </div>
+        
+
+
+<div class="-actions">
+    <nav class="secondary-nav">
+        <div class="-dialog-container js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="http://stackoverflow.com/">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li>
+                            <div class="related-links">
+            <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:14 })">help</a>
+                    <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                    </li>
+                    <li class="related-site">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                        
+    <a href="https://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="site.switch({ target_site:552, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;amp;utm_source=stackoverflow.com&amp;amp;utm_medium=dev-story&amp;amp;utm_campaign=signup-redirect" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f16562577%2fhow-can-i-make-a-button-redirect-my-page-to-another-page" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="https://stackoverflow.blog/" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+                <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+
+        </div>
+        <ol class="-list">
+            
+    <li class="-item"><a href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page#" class="-link js-help-button" title="Help Center and other resources">
+        <svg viewBox="0 0 18 18" width="18" height="18" role="icon"><path fill-rule="evenodd" d="M9 0a9 9 0 1 0 .001 18.001A9 9 0 0 0 9 0zm.812 13.126c-.02.716-.55 1.157-1.238 1.137-.659-.02-1.177-.49-1.157-1.209.02-.715.566-1.17 1.225-1.15.691.021 1.194.507 1.17 1.222zm1.956-5.114c-.168.237-.546.542-1.02.912l-.527.361c-.257.197-.417.43-.502.695-.044.141-.076.507-.084.752-.004.048-.032.156-.181.156H7.883c-.165 0-.185-.096-.18-.144.023-.667.12-1.218.397-1.66.374-.594 1.426-1.221 1.426-1.221.161-.12.286-.25.382-.39.177-.24.321-.51.321-.8 0-.333-.08-.65-.293-.915-.249-.31-.518-.458-1.036-.458-.51 0-.808.257-1.021.594-.213.338-.177.735-.177 1.097H5.746c0-1.366.357-2.238 1.112-2.752.51-.35 1.162-.502 1.921-.502.996 0 1.788.184 2.487.715.647.49.988 1.181.988 2.113 0 .575-.2 1.057-.486 1.447z"></path></svg>
+    </a></li>
+                <li class="-item">
+        <a href="https://stackexchange.com/" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 167 Stack Exchange sites">
+            <svg viewBox="0 0 18 19" width="18" height="19" role="icon"><path fill-rule="evenodd" d="M0 14a2 2 0 0 0 2 2h10v3l3-3h1a2 2 0 0 0 2-2v-2H0v2zM16 0H2a2 2 0 0 0-2 2v2h18V2a2 2 0 0 0-2-2zM0 6h18v4H0V6z"></path></svg>
+        </a>
+    </li>
+
+
+        </ol>
+    </nav>
+        <div class="-ctas">
+                    <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f16562577%2fhow-can-i-make-a-button-redirect-my-page-to-another-page" class="login-link btn-clear" rel="nofollow">Log In</a>
+                        <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;utm_source=stackoverflow.com&amp;utm_medium=dev-story&amp;utm_campaign=signup-redirect" class="login-link btn" rel="nofollow">Sign Up</a>
+
+        </div>
+</div>
+    </div>
+</header>
+
+    <script>
+        StackExchange.ready(function () { StackExchange.topbar.init(); });
+            StackExchange.scrollPadding.setPaddingTop(60, 10);     </script>
+
+    <div class="container">
+        
+
+
+        <div id="content" class="snippet-hidden">
+
+
+
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+
+<div id="herobox" class="alternate">
+    <div class="test"></div>
+        <div id="close">
+            <a title="click to minimize"><span>x</span> Dismiss</a>
+        </div>
+    <div class="content">
+        <b>Join the Stack Overflow Community</b>
+        <div class="separator"></div>
+        <div class="blurb">
+            Stack Overflow is a community of 7.0 million programmers, just like you, helping each other.
+                <br>
+Join them; it only takes a minute:                <br>
+        </div>
+        <a href="http://stackoverflow.com/users/signup?ssrc=hero&amp;returnurl=%2fusers%2fstory%2fcurrent&amp;amp;utm_source=stackoverflow.com&amp;amp;utm_medium=dev-story&amp;amp;utm_campaign=signup-redirect" id="tell-me-more" class="button">Sign up</a>
+    </div>
+</div>
+<script>
+    StackExchange.ready(function () {
+
+        var location = 0;
+        if ($("body").hasClass("questions-page")) {
+            location = 1;;
+        } else if ($("body").hasClass("question-page")) {
+            location = 1;;
+        } else if ($("body").hasClass("faq-page")) {
+            location = 5;;
+        } else if ($("body").hasClass("home-page")) {
+            location = 3;;
+        }
+        
+        $('#tell-me-more').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+            });
+        });
+        
+        $('#herobox #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+            });
+            
+            $.cookie("hero", "mini", { path: "/", expires: 365 });
+            $.ajax({
+                url: "/hero-mini",
+                success: function (data) {
+                    $("#herobox").fadeOut("fast", function () {
+                        $("#herobox").replaceWith(data);
+                        $("#herobox-mini").fadeIn("fast");
+                    });
+                }
+            });
+            return false;
+        });
+    });
+
+</script>			<div id="question-header">
+                <h1 itemprop="name"><a href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page" class="question-hyperlink">How can I make a button redirect my page to another page? [duplicate]</a></h1>
+
+            
+<div class="aside-cta" role="navigation" aria-label="ask new question">
+    <a href="http://stackoverflow.com/questions/ask" class="btn-outlined">Ask Question</a>
+</div>
+		</div>
+			<div id="mainbar" role="main" aria-label="question and answers">
+
+			
+
+<div class="question" data-questionid="16562577" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk836698203",4).setZone(43); });
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk836698203"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjo1MTc3NTcsImNoIjoxMTc4LCJjayI6e30sImNyIjoxNjM4OTgwLCJkaSI6ImMyZmRjYmZiYmQ0MzQxNGI4MTEwMTI3ZWE4ODZhZWU2IiwiZG0iOjEsImZjIjoyMTY0NTQyLCJmbCI6MjYzMTU3OSwiaXAiOiIyMDkuMjEwLjE1Ny4xNjUiLCJrdyI6ImphdmFzY3JpcHQsanF1ZXJ5LGh0bWwseC1wZXJzb25hLWZyb250ZW5kIiwibWsiOiJ4LXBlcnNvbmEtZnJvbnRlbmQiLCJudyI6MjIsInBjIjowLCJlYyI6MCwicHIiOjE2MDQsInJ0IjoyLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vIiwic2IiOiJpLTBjMTkyYTkwMWRlNzM2MzFjIiwic3AiOjk5MzUsInN0Ijo4Mjc3LCJ1ayI6InVlMS01Y2M4ZmMyNjVkYmM0ZTBiOTAwMWRhOGFlZTdjNzdhOCIsInpuIjo0MywidHMiOjE0OTI3Mjk0MDc3OTUsImJmIjp0cnVlLCJwbiI6ImFkemVyazgzNjY5ODIwMyIsInVyIjoiaHR0cDovL3N0YWNrb3ZlcmZsb3cuY29tL2pvYnM_dXRtX3NvdXJjZT13ZWJzaXRlJnV0bV9tZWRpdW09YmFubmVyJnV0bV9jb250ZW50PWxlYWRlcmJvYXJkXzYmdXRtX2NhbXBhaWduPWhvdXNlX2Fkc19ob3VzZV9hZHNfUk9TX1NPIn0&amp;s=IBgcPwQTC69STmd5eP5KWP9L18k" rel="nofollow" target="_blank" title=""><img src="http://static.adzerk.net/Advertisers/0932cfed3e374852a27a09c2ed27061c.png" title="" alt="" border="0" width="728" height="90" style="display: none !important;"></a><img height="0px" width="0px" border="0" style="position: absolute; display: none !important;" src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjo1MTc3NTcsImNoIjoxMTc4LCJjayI6e30sImNyIjoxNjM4OTgwLCJkaSI6ImMyZmRjYmZiYmQ0MzQxNGI4MTEwMTI3ZWE4ODZhZWU2IiwiZG0iOjEsImZjIjoyMTY0NTQyLCJmbCI6MjYzMTU3OSwiaXAiOiIyMDkuMjEwLjE1Ny4xNjUiLCJrdyI6ImphdmFzY3JpcHQsanF1ZXJ5LGh0bWwseC1wZXJzb25hLWZyb250ZW5kIiwibWsiOiJ4LXBlcnNvbmEtZnJvbnRlbmQiLCJudyI6MjIsInBjIjowLCJlYyI6MCwicHIiOjE2MDQsInJ0IjoyLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vIiwic2IiOiJpLTBjMTkyYTkwMWRlNzM2MzFjIiwic3AiOjk5MzUsInN0Ijo4Mjc3LCJ1ayI6InVlMS01Y2M4ZmMyNjVkYmM0ZTBiOTAwMWRhOGFlZTdjNzdhOCIsInpuIjo0MywidHMiOjE0OTI3Mjk0MDc3OTYsImJmIjp0cnVlLCJwbiI6ImFkemVyazgzNjY5ODIwMyIsImZxIjowfQ&amp;s=hykpAIWigQPXH-9u_0G1OV9_h3o"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="16562577">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">46</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page#">favorite</a>
+        <div class="favoritecount"><b>9</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<div class="question-status question-originals-of-duplicate">
+    <p>This question already has an answer here:</p>
+    <ul>
+        <li>
+            <a href="http://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link" dir="ltr">How to create an HTML button that acts like a link?</a>
+                <span class="question-originals-answer-count">
+                    26 answers
+                </span>
+        </li>
+    </ul>
+    </div>
+<p>I have been trying the following:</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="tag">&lt;form</span><span class="pln"> </span><span class="atn">action</span><span class="pun">=</span><span class="atv">"/home"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"inline"</span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"float-left submit-button"</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">Home</span><span class="tag">&lt;/button&gt;</span><span class="pln">
+</span><span class="tag">&lt;/form&gt;</span></code></pre>
+
+<p>It seems to work but it goes to the page "/home?"</p>
+
+<p>Is there a better way for me to make a button inside a form make the page go to a new location?</p>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/javascript" class="post-tag js-gps-track" title="show questions tagged &#39;javascript&#39;" rel="tag">javascript</a> <a href="http://stackoverflow.com/questions/tagged/jquery" class="post-tag js-gps-track" title="show questions tagged &#39;jquery&#39;" rel="tag">jquery</a> <a href="http://stackoverflow.com/questions/tagged/html" class="post-tag js-gps-track" title="show questions tagged &#39;html&#39;" rel="tag">html</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/16562577" title="short permalink to this question" class="short-link" id="link-post-16562577">share</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/16562577/revisions" title="show all edits to this post">edited <span title="2015-07-03 09:32:26Z" class="relativetime">Jul 3 '15 at 9:32</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1039608/mattytommo"><div class="gravatar-wrapper-32"><img src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/Y5Fp1.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1039608/mattytommo">mattytommo</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 42,015" dir="ltr">42k</span><span title="12 gold badges"><span class="badge1"></span><span class="badgecount">12</span></span><span title="80 silver badges"><span class="badge2"></span><span class="badgecount">80</span></span><span title="114 bronze badges"><span class="badge3"></span><span class="badgecount">114</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2013-05-15 10:24:59Z" class="relativetime">May 15 '13 at 10:24</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1464139/anne"><div class="gravatar-wrapper-32"><img src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/1318bf43993058eaff255dfed3e7753a" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1464139/anne">Anne</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,680</span><span title="16 gold badges"><span class="badge1"></span><span class="badgecount">16</span></span><span title="52 silver badges"><span class="badge2"></span><span class="badgecount">52</span></span><span title="103 bronze badges"><span class="badge3"></span><span class="badgecount">103</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                        <tr>
+            <td class="special-status" colspan="2">
+                <div class="question-status">
+        <h2>                    <b>marked</b> as duplicate by <a href="http://stackoverflow.com/users/1612146/george">George</a>, <a href="http://stackoverflow.com/users/157397/meo">meo</a>, <a href="http://stackoverflow.com/users/96823/tig">tig</a>, <a href="http://stackoverflow.com/users/1236044/jbl">jbl</a>, <a href="http://stackoverflow.com/users/703595/manuel">Manuel</a> <span dir="ltr"><span title="2013-05-15 12:15:32Z" class="relativetime">May 15 '13 at 12:15</span></span>
+</h2>
+        <p>This question has been asked before and already has an answer. If those answers do not fully address your question, please <a href="http://stackoverflow.com/questions/ask">ask a new question</a>.</p>
+    </div>
+            </td>
+        </tr>
+    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-16562577" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-23795512" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Duplicate Question: <a href="http://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link">http://stackoverflow.com/questions/2906582/how-to-create-an-‌​html-button-that-act‌​s-like-a-link</a></span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/2354826/antoox" title="1,069 reputation" class="comment-user">antoox</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page#comment23795512_16562577"><span title="2013-05-15 10:25:32Z" class="relativetime-clean">May 15 '13 at 10:25</span></a></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-46850314" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Just try to understand DOM and it's events, this will be easy.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1202145/bhargav-nanekalva" title="447 reputation" class="comment-user">Bhargav Nanekalva</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page#comment46850314_16562577"><span title="2015-03-29 14:42:44Z" class="relativetime-clean">Mar 29 '15 at 14:42</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-16562577" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								5 Answers
+                                <span style="display:none;" itemprop="answerCount">5</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="16562671"></a>
+<div id="answer-16562671" class="answer accepted-answer" data-answerid="16562671" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="16562671">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">152</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Just add an <code>onclick</code> event to the <code>button</code>:</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">onclick</span><span class="pun">=</span><span class="atv">"</span><span class="pln">location</span><span class="pun">.</span><span class="pln">href </span><span class="pun">=</span><span class="pln"> </span><span class="str">'www.yoursite.com'</span><span class="pun">;</span><span class="atv">"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"myButton"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"float-left submit-button"</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">Home</span><span class="tag">&lt;/button&gt;</span></code></pre>
+
+<p>But you shouldn't really have it inline like that, instead, put it in a JS block and give the <code>button</code> an ID:</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"myButton"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"float-left submit-button"</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">Home</span><span class="tag">&lt;/button&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text/javascript"</span><span class="tag">&gt;</span><span class="pln">
+    document</span><span class="pun">.</span><span class="pln">getElementById</span><span class="pun">(</span><span class="str">"myButton"</span><span class="pun">).</span><span class="pln">onclick </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        location</span><span class="pun">.</span><span class="pln">href </span><span class="pun">=</span><span class="pln"> </span><span class="str">"www.yoursite.com"</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">};</span><span class="pln">
+</span><span class="tag">&lt;/script&gt;</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/16562671" title="short permalink to this answer" class="short-link" id="link-post-16562671">share</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/16562671/revisions" title="show all edits to this post">edited <span title="2014-02-12 06:15:37Z" class="relativetime">Feb 12 '14 at 6:15</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/-1/community"><div class="gravatar-wrapper-32"><img src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/a007be5a61f6aa8f3e85ae2fc18dd66e" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/-1/community">Community</a><span class="mod-flair" title="moderator">♦</span>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-05-15 10:30:00Z" class="relativetime">May 15 '13 at 10:30</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1039608/mattytommo"><div class="gravatar-wrapper-32"><img src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/Y5Fp1.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1039608/mattytommo">mattytommo</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 42,015" dir="ltr">42k</span><span title="12 gold badges"><span class="badge1"></span><span class="badgecount">12</span></span><span title="80 silver badges"><span class="badge2"></span><span class="badgecount">80</span></span><span title="114 bronze badges"><span class="badge3"></span><span class="badgecount">114</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-16562671" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-65678209" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">&lt;button class="btn-lg btn-success" formaction="ContactUs.html"&gt;ACCEPT&lt;/button&gt;</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/3175526/joshyates1980" title="1,304 reputation" class="comment-user">JoshYates1980</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page#comment65678209_16562671"><span title="2016-08-26 13:52:10Z" class="relativetime-clean">Aug 26 '16 at 13:52</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-65745139" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Do I need to have a form tag in this HTML that describes the method and submit action?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/3328204/himansz" title="112 reputation" class="comment-user">Himansz</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page#comment65745139_16562671"><span title="2016-08-29 09:35:29Z" class="relativetime-clean">Aug 29 '16 at 9:35</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-65761457" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Himansz Not if you're not going to submit the form. If it's a simple re-direction then you don't need a form.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1039608/mattytommo" title="42,015 reputation" class="comment-user">mattytommo</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page#comment65761457_16562671"><span title="2016-08-29 16:53:10Z" class="relativetime-clean">Aug 29 '16 at 16:53</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-16562671" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1501825875",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk1501825875"><iframe id="ados_frame_adzerk1501825875_2750702" frameborder="0" scrolling="no" height="90" width="728" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/saved_resource.html"></iframe><img height="0px" width="0px" border="0" style="position: absolute; display: none !important;" src="http://engine.adzerk.net/i.gif?e=eyJhdiI6MTEzNywiYXQiOjQsImJ0IjowLCJjbSI6NTM4NjQ0LCJjaCI6MTE3OCwiY2siOnt9LCJjciI6MTkyNjEzMCwiZGkiOiJkMDZlY2UyN2Y5ZDE0ZTE3ODNiOWFlOWVhMDM0MmNkNyIsImRtIjoxLCJmYyI6MjMyODYwNywiZmwiOjI3NTA3MDIsImlwIjoiMjA5LjIxMC4xNTcuMTY1Iiwia3ciOiJqYXZhc2NyaXB0LGpxdWVyeSxodG1sLHgtcGVyc29uYS1mcm9udGVuZCIsIm1rIjoiamF2YXNjcmlwdCIsIm53IjoyMiwicGMiOjUuMDgsImVjIjo1LjA4LCJwciI6NzY1LCJydCI6MiwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyIsInNiIjoiaS0wYzE5MmE5MDFkZTczNjMxYyIsInNwIjo5OTM1LCJzdCI6ODI3NywidWsiOiJ1ZTEtNWNjOGZjMjY1ZGJjNGUwYjkwMDFkYThhZWU3Yzc3YTgiLCJ6biI6NDQsInRzIjoxNDkyNzI5NDA3Nzk3LCJiZiI6dHJ1ZSwicG4iOiJhZHplcmsxNTAxODI1ODc1IiwiZnEiOjB9&amp;s=pWUcyRYPvAbrZmlX7FktYVF0jTg"></div>
+  
+<a name="16562728"></a>
+<div id="answer-16562728" class="answer" data-answerid="16562728" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="16562728">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">19</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>try</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">onclick</span><span class="pun">=</span><span class="atv">"</span><span class="pln">window</span><span class="pun">.</span><span class="pln">location</span><span class="pun">.</span><span class="pln">href</span><span class="pun">=</span><span class="str">'b.php'</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">Click me</span><span class="tag">&lt;/button&gt;</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/16562728" title="short permalink to this answer" class="short-link" id="link-post-16562728">share</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-05-15 10:33:11Z" class="relativetime">May 15 '13 at 10:33</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2219123/ehmad-imtiaz"><div class="gravatar-wrapper-32"><img src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/81igu.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2219123/ehmad-imtiaz">Ehmad Imtiaz</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">213</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="6 bronze badges"><span class="badge3"></span><span class="badgecount">6</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-16562728" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-16562728" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="16562837"></a>
+<div id="answer-16562837" class="answer" data-answerid="16562837" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="16562837">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">7</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Just another variation:</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="pln">    </span><span class="tag">&lt;body&gt;</span><span class="pln">
+    </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"redirect"</span><span class="pln"> </span><span class="atn">onClick</span><span class="pun">=</span><span class="atv">"</span><span class="pln">redirect</span><span class="pun">()</span><span class="atv">"</span><span class="tag">&gt;</span><span class="pln">
+
+    </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text/javascript"</span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="kwd">function</span><span class="pln"> redirect</span><span class="pun">()</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">var</span><span class="pln"> url </span><span class="pun">=</span><span class="pln"> </span><span class="str">"http://www.(url).com"</span><span class="pun">;</span><span class="pln">
+    window</span><span class="pun">.</span><span class="pln">location</span><span class="pun">(</span><span class="pln">url</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="tag">&lt;/script&gt;</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/16562837" title="short permalink to this answer" class="short-link" id="link-post-16562837">share</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-05-15 10:38:21Z" class="relativetime">May 15 '13 at 10:38</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2380516/ben-taylor"><div class="gravatar-wrapper-32"><img src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/4f837b4885803daab9e923dcb1a13471" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2380516/ben-taylor">Ben Taylor</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">111</span><span title="3 bronze badges"><span class="badge3"></span><span class="badgecount">3</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-16562837" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-47187702" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">window.location is not a function! Use this:  setTimeout('window.location.href="url"', 0);  or JQuery: $(location).attr('href',url);</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/2469427/generalkimi" title="128 reputation" class="comment-user">GeneralKimi</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page#comment47187702_16562837"><span title="2015-04-08 13:36:44Z" class="relativetime-clean">Apr 8 '15 at 13:36</span></a></span>
+                        <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-64444707" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This doesnt work, instead use window.location.href="http...";</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1955076/shalin-jirawla" title="246 reputation" class="comment-user">Shalin Jirawla</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page#comment64444707_16562837"><span title="2016-07-22 11:24:00Z" class="relativetime-clean">Jul 22 '16 at 11:24</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-16562837" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="16562913"></a>
+<div id="answer-16562913" class="answer" data-answerid="16562913" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="16562913">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">3</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>This is here:</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="pln"> </span><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">onClick</span><span class="pun">=</span><span class="atv">"</span><span class="pln">window</span><span class="pun">.</span><span class="pln">location</span><span class="pun">=</span><span class="str">'page_name.php'</span><span class="pun">;</span><span class="atv">"</span><span class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"click here"</span><span class="pln"> </span><span class="tag">/&gt;</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/16562913" title="short permalink to this answer" class="short-link" id="link-post-16562913">share</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-05-15 10:41:19Z" class="relativetime">May 15 '13 at 10:41</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1393856/veer-shrivastav"><div class="gravatar-wrapper-32"><img src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/0f93f190ca4d6b7951ee58e9a4061215" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1393856/veer-shrivastav">Veer Shrivastav</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,646</span><span title="8 gold badges"><span class="badge1"></span><span class="badgecount">8</span></span><span title="29 silver badges"><span class="badge2"></span><span class="badgecount">29</span></span><span title="53 bronze badges"><span class="badge3"></span><span class="badgecount">53</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-16562913" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-48004426" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Hope you will find this useful. Please try this: <code>&lt;td colspan="4"&gt;&lt;input type="button" name="back" onclick="parent.location='contacts.php'" value="Back to List" class="McElieButton2"&gt;&lt;/td&gt;</code></span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/3963097/mcelie" title="88 reputation" class="comment-user">McElie</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page#comment48004426_16562913"><span title="2015-04-29 11:05:34Z" class="relativetime-clean">Apr 29 '15 at 11:05</span></a></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-16562913" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="16562676"></a>
+<div id="answer-16562676" class="answer" data-answerid="16562676" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="16562676">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>you could do so:</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">onclick</span><span class="pun">=</span><span class="atv">"</span><span class="pln">location</span><span class="pun">.</span><span class="pln">href</span><span class="pun">=</span><span class="str">'page'</span><span class="atv">"</span><span class="tag">&gt;</span></code></pre>
+
+<p>you could change the action attribute of the form on click the button:</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="tag">&lt;button</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"float-left submit-button"</span><span class="pln"> </span><span class="atn">onclick</span><span class="pun">=</span><span class="atv">'</span><span class="pln">myFun</span><span class="pun">()</span><span class="atv">'</span><span class="tag">&gt;</span><span class="pln">Home</span><span class="tag">&lt;/button&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;script&gt;</span><span class="pln">
+myFun</span><span class="pun">(){</span><span class="pln">
+$</span><span class="pun">(</span><span class="str">'form'</span><span class="pun">).</span><span class="pln">attr</span><span class="pun">(</span><span class="str">'action'</span><span class="pun">,</span><span class="str">'new path'</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span><span class="tag">&lt;/script&gt;</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/16562676" title="short permalink to this answer" class="short-link" id="link-post-16562676">share</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-05-15 10:30:10Z" class="relativetime">May 15 '13 at 10:30</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/855758/muhammad-ramahy"><div class="gravatar-wrapper-32"><img src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/e6fb9680f3ba087466aae554063f0efe" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/855758/muhammad-ramahy">Muhammad Ramahy</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">785</span><span title="12 silver badges"><span class="badge2"></span><span class="badgecount">12</span></span><span title="45 bronze badges"><span class="badge3"></span><span class="badgecount">45</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-16562676" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-16562676" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+				
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/javascript" class="post-tag" title="show questions tagged &#39;javascript&#39;" rel="tag">javascript</a> <a href="http://stackoverflow.com/questions/tagged/jquery" class="post-tag" title="show questions tagged &#39;jquery&#39;" rel="tag">jquery</a> <a href="http://stackoverflow.com/questions/tagged/html" class="post-tag" title="show questions tagged &#39;html&#39;" rel="tag">html</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2013-05-15 10:24:59Z"><b>3 years, 11 months ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>498938 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page?lastactivity" class="lastactivity-link" title="2015-07-03 09:32:26Z">1 year, 9 months ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk2018484344",[5,17,2221,1129,43]).setZone(45); });
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk2018484344"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NSwiYnQiOjAsImNtIjo0NzE0OTMsImNoIjoxMTc4LCJjayI6e30sImNyIjoxNjM4OTk4LCJkaSI6ImEwNThkYWJiMTZhZTQ0ZmRhYTRmNmYwMTczYWUzODY5IiwiZG0iOjEsImZjIjoxOTQzNDU1LCJmbCI6MjE0MjMxMiwiaXAiOiIyMDkuMjEwLjE1Ny4xNjUiLCJrdyI6ImphdmFzY3JpcHQsanF1ZXJ5LGh0bWwseC1wZXJzb25hLWZyb250ZW5kIiwibnciOjIyLCJwYyI6MCwiZWMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyIsInNiIjoiaS0wYzE5MmE5MDFkZTczNjMxYyIsInNwIjo5OTM1LCJzdCI6ODI3NywidWsiOiJ1ZTEtNWNjOGZjMjY1ZGJjNGUwYjkwMDFkYThhZWU3Yzc3YTgiLCJ6biI6NDUsInRzIjoxNDkyNzI5NDA3Nzk4LCJiZiI6dHJ1ZSwicG4iOiJhZHplcmsyMDE4NDg0MzQ0IiwidXIiOiJodHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vam9icz91dG1fc291cmNlPXdlYnNpdGUmdXRtX21lZGl1bT1iYW5uZXImdXRtX2NvbnRlbnQ9bXB1XzkmdXRtX2NhbXBhaWduPWhvdXNlX2Fkc19ob3VzZV9hZHNfUk9TX1NPIn0&amp;s=KhmxmqXEE9kK6f_o2UgPRTQIyvc" rel="nofollow" target="_blank" title=""><img src="http://static.adzerk.net/Advertisers/13952578e80b4eb7b3c7c369b5818a74.png" title="" alt="" border="0" width="300" height="250" style="display: none !important;"></a><img height="0px" width="0px" border="0" style="position: absolute; display: none !important;" src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NDE0LCJhdCI6NSwiYnQiOjAsImNtIjo0NzE0OTMsImNoIjoxMTc4LCJjayI6e30sImNyIjoxNjM4OTk4LCJkaSI6ImEwNThkYWJiMTZhZTQ0ZmRhYTRmNmYwMTczYWUzODY5IiwiZG0iOjEsImZjIjoxOTQzNDU1LCJmbCI6MjE0MjMxMiwiaXAiOiIyMDkuMjEwLjE1Ny4xNjUiLCJrdyI6ImphdmFzY3JpcHQsanF1ZXJ5LGh0bWwseC1wZXJzb25hLWZyb250ZW5kIiwibnciOjIyLCJwYyI6MCwiZWMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyIsInNiIjoiaS0wYzE5MmE5MDFkZTczNjMxYyIsInNwIjo5OTM1LCJzdCI6ODI3NywidWsiOiJ1ZTEtNWNjOGZjMjY1ZGJjNGUwYjkwMDFkYThhZWU3Yzc3YTgiLCJ6biI6NDUsInRzIjoxNDkyNzI5NDA3Nzk5LCJiZiI6dHJ1ZSwicG4iOiJhZHplcmsyMDE4NDg0MzQ0IiwiZnEiOjB9&amp;s=BPzjXuhykrkSykMmaaeS5cEaq9w"></div>
+            <div id="hireme" class="clc-jobs-multi orange tagged"><a class="top " href="https://stackoverflow.com/jobs?location=Seattle%2C%20Washington%2C%20%2C%20" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=45IweVri2HHFQ_3y_-BQJiYBY-aJnz-x51nZuH4MX22Wz_jR707AiUAGJoaUAwUcqZZMjEAmkzxT21O2O-0cN57xKjMxMBzwsFO16n-dai_PdHAV-_n7HB8e8jODxBuF1a1UgnzsGZ6qvJo8scmg_YwLAA&amp;cr=10440&amp;ct=1&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%3Flocation%3DSeattle%252C%2520Washington%252C%2520%252C%2520&amp;sig=ge4qFpcy3FkcOA"><span>Jobs near you</span></a><div class="middle"><ul class="jobs"><li class="&quot;clc-dismissable&quot;"><div class="job-wrap"><a class="job" title="Full Time - ReactJS Engineer - Russia, Ukraine at FoxCommerce. Click to learn more." href="https://stackoverflow.com/jobs/130060/full-time-reactjs-engineer-russia-ukraine-foxcommerce?sec=False" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=45IweVri2HHFQ_3y_-BQJiYBY-aJnz-x51nZuH4MX22Wz_jR707AiUAGJoaUAwUcqZZMjEAmkzxT21O2O-0cN57xKjMxMBzwsFO16n-dai_PdHAV-_n7HB8e8jODxBuF1a1UgnzsGZ6qvJo8scmg_YwLAA&amp;cr=226136&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2F130060%2Ffull-time-reactjs-engineer-russia-ukraine-foxcommerce%3Fsec%3DFalse&amp;sig=wsrHSIprCAMyaA"><div class="title">Full Time - ReactJS Engineer - Russia, Ukraine</div><div><span class="company">FoxCommerce</span><span class="location">Seattle, WA</span></div><div class="opts"><span class="opt remote">Remote</span></div><span class="post-tag">reactjs</span><span class="post-tag">javascript</span></a></div><a class="clc-dismiss" data-clc-click="https://clc.stackoverflow.com/click?an=45IweVri2HHFQ_3y_-BQJiYBY-aJnz-x51nZuH4MX22Wz_jR707AiUAGJoaUAwUcqZZMjEAmkzxT21O2O-0cN57xKjMxMBzwsFO16n-dai_PdHAV-_n7HB8e8jODxBuF1a1UgnzsGZ6qvJo8scmg_YwLAA&amp;cr=226136&amp;ct=-1&amp;sig=7b1PPNI8bn1mUg" data-clc-meta-target="-1"><span class="clc-tooltip above-left">dismiss this job</span></a></li><li class="&quot;clc-dismissable&quot;"><div class="job-wrap"><a class="job" title="Front End Developer at Rylem. Click to learn more." href="https://stackoverflow.com/jobs/140742/front-end-developer-rylem?sec=False" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=45IweVri2HHFQ_3y_-BQJiYBY-aJnz-x51nZuH4MX22Wz_jR707AiUAGJoaUAwUcqZZMjEAmkzxT21O2O-0cN57xKjMxMBzwsFO16n-dai_PdHAV-_n7HB8e8jODxBuF1a1UgnzsGZ6qvJo8scmg_YwLAA&amp;cr=258288&amp;ct=0&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%2F140742%2Ffront-end-developer-rylem%3Fsec%3DFalse&amp;sig=l8Ja2wg33xlESA"><div class="title">Front End Developer</div><div><span class="company">Rylem</span><span class="location">Seattle, WA</span></div><span class="post-tag">javascript</span><span class="post-tag">reactjs</span></a></div><a class="clc-dismiss" data-clc-click="https://clc.stackoverflow.com/click?an=45IweVri2HHFQ_3y_-BQJiYBY-aJnz-x51nZuH4MX22Wz_jR707AiUAGJoaUAwUcqZZMjEAmkzxT21O2O-0cN57xKjMxMBzwsFO16n-dai_PdHAV-_n7HB8e8jODxBuF1a1UgnzsGZ6qvJo8scmg_YwLAA&amp;cr=258288&amp;ct=-1&amp;sig=NERmom8MUS9kKA" data-clc-meta-target="-1"><span class="clc-tooltip above-left">dismiss this job</span></a></li></ul></div><div class="bottom"><a class="city" href="https://stackoverflow.com/jobs?location=Seattle%2C%20Washington%2C%20%2C%20" target="_blank" data-clc-click="https://clc.stackoverflow.com/click?an=45IweVri2HHFQ_3y_-BQJiYBY-aJnz-x51nZuH4MX22Wz_jR707AiUAGJoaUAwUcqZZMjEAmkzxT21O2O-0cN57xKjMxMBzwsFO16n-dai_PdHAV-_n7HB8e8jODxBuF1a1UgnzsGZ6qvJo8scmg_YwLAA&amp;cr=10440&amp;ct=2&amp;url=https%3A%2F%2Fstackoverflow.com%2Fjobs%3Flocation%3DSeattle%252C%2520Washington%252C%2520%252C%2520&amp;sig=grwJgd419CTxBw">More jobs near Seattle…</a></div><img src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/impression.gif" class="impression" style="display: none;"></div>
+        <script>
+window.clc_request = 'AiuJWXNBiNQIAAAAAJG5_AACAAAAAgAAAAArAAAAfGphdmFzY3JpcHR8anF1ZXJ5fGh0bWx8eC1wZXJzb25hLWZyb250ZW5kfAAuUShhioZnAoXX';
+;(function(n){var t,u,r,i;try{if(typeof[].indexOf!="function")return;if(window.attachEvent&&!window.addEventListener)return;if(n.allowed[0]!=="*"&&n.allowed.indexOf(location.hostname)===-1)return;if(t=window,t.clc=t.clc||{},u=t.clc_request||t.clcfl_request,t.clc.init=t.clc.init||[],t.clc.init.push(function(n){return n.load()}),t.clc.options){for(r in t.clc.options)n[r]=t.clc.options[r];t.clc.options=n}else t.clc.options=n;i=document.createElement("script");i.async=!0;i.src=n.lib;document.body.appendChild(i)}catch(f){console.error("[clc] Error in loader:",f)}}).call(null, {"lib":"https://cdn.sstatic.net/clc/clc.min.js?v=77a9386790c1","u":"https://clc.stackoverflow.com/markup.js","azw":true,"kt":2000,"tto":true,"d":{"sb":["hireme","clc-sb"],"tlb":["careers1","clc-tlb"],"mlb":["careers3","clc-mlb"]},"h":"clc.stackoverflow.com","autoload":true,"allowed":["stackoverflow.com","serverfault.com","blog.codinghorror.com","talent.stackoverflow.com"]});        </script>
+			<div class="module" id="chat-feature">
+
+    <h4><a href="http://chat.stackoverflow.com/" id="h-chat-link" title="91 users active in 36 rooms the last 60 minutes">91 People Chatting</a></h4>
+    <div class="related" id="ad502-rooms"><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="JavaScript"><a href="http://chat.stackoverflow.com/rooms/17">JavaScript</a></span></h3><span title="2017-04-20 20:41:32Z" class="ad502-last-message">2 hours ago - <a href="http://chat.stackoverflow.com/users/763509">Vap0r</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/617762"><img height="23" width="23" title="Zirak: 2 hours ago" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/348d335cd13298e475eeaefa1841dee6"></a><a href="http://chat.stackoverflow.com/users/956900"><img height="23" width="23" title="Luggage: 2 hours ago" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/4416acf0ee6259443ee3cca16d894d14"></a><a href="http://chat.stackoverflow.com/users/763509"><img height="23" width="23" title="Vap0r: 2 hours ago" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/e2c0a4b6287e4e3fefa64fa8753c17a5"></a><a href="http://chat.stackoverflow.com/users/3708561"><img height="23" width="23" title="Kramb: 2 hours ago" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/454146a6730bb24cd992ffe692ce9c23"></a><a href="http://chat.stackoverflow.com/users/1839506"><img height="23" width="23" title="Caprica Six: 2 hours ago" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/Sej2t.jpg"></a><a href="http://chat.stackoverflow.com/users/400654"><img height="23" width="23" title="Kevin B: 2 hours ago" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/afc1068910df4dd83c2fc3af0255af11"></a><a href="http://chat.stackoverflow.com/users/322395"><img height="23" width="23" title="Loktar: 2 hours ago" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/KwBES.png"></a></div></div><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="Lounge&lt;C++&gt;"><a href="http://chat.stackoverflow.com/rooms/10">Lounge&lt;C++&gt;</a></span></h3><span title="2017-04-20 20:41:07Z" class="ad502-last-message">2 hours ago - <a href="http://chat.stackoverflow.com/users/332733">Mgetz</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/332733"><img height="23" width="23" title="Mgetz: 2 hours ago" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/BR7yE.jpg"></a><a href="http://chat.stackoverflow.com/users/752976"><img height="23" width="23" title="Bartek Banachewicz: 2 hours ago" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/j7Uis.jpg"></a><a href="http://chat.stackoverflow.com/users/5142164"><img height="23" width="23" title="Horttanainen: 2 hours ago" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/73693df9b10f526d659476a74b374f6d"></a><a href="http://chat.stackoverflow.com/users/314290"><img height="23" width="23" title="Mikhail: 2 hours ago" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/5ffde821f0f9670e601b19f1731a6849"></a><a href="http://chat.stackoverflow.com/users/726300"><img height="23" width="23" title="Luc Danton: 2 hours ago" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/ZWH6H.png"></a><a href="http://chat.stackoverflow.com/users/3484570"><img height="23" width="23" title="nwp: 2 hours ago" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/r5BRZ.png"></a><a href="http://chat.stackoverflow.com/users/560648"><img height="23" width="23" title="BoundaryImposition: 2 hours ago" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/AkjZZ.jpg"></a></div></div></div>
+    <script>
+    // <!--
+        StackExchange.ready(
+        function () {
+            var options = {
+                chatUrl: 'http://chat.stackoverflow.com',
+                reloadUrl: '/api/recent-chat',
+                preloadData: {"activeUsers":91,"activeRooms":36,"rooms":[{"name":"JavaScript","id":17,"lastPost":1492720892,"posts":3950499,"users":[{"name":"Zirak","id":617762,"emailhash":"348d335cd13298e475eeaefa1841dee6","lastPost":1492720871},{"name":"Luggage","id":956900,"emailhash":"4416acf0ee6259443ee3cca16d894d14","lastPost":1492720862},{"name":"Vap0r","id":763509,"emailhash":"e2c0a4b6287e4e3fefa64fa8753c17a5","lastPost":1492720848},{"name":"Kramb","id":3708561,"emailhash":"454146a6730bb24cd992ffe692ce9c23","lastPost":1492720833},{"name":"Caprica Six","id":1839506,"emailhash":"!https://i.stack.imgur.com/Sej2t.jpg?s=128\u0026g=1","lastPost":1492720699},{"name":"Kevin B","id":400654,"emailhash":"afc1068910df4dd83c2fc3af0255af11","lastPost":1492720241},{"name":"Loktar","id":322395,"emailhash":"!https://i.stack.imgur.com/KwBES.png?s=128\u0026g=1","lastPost":1492720073}],"messages":[{"date":1492720892,"user":"Vap0r","userid":763509}],"singleImage":false,"tags":["ecmascript","ecmascript-6","hypescript","javascript","nodejs"]},{"name":"Lounge\u003cC++\u003e","id":10,"lastPost":1492720867,"posts":4878020,"users":[{"name":"Mgetz","id":332733,"emailhash":"!https://i.stack.imgur.com/BR7yE.jpg?s=128\u0026g=1","lastPost":1492720867},{"name":"Bartek Banachewicz","id":752976,"emailhash":"!https://i.stack.imgur.com/j7Uis.jpg?s=128\u0026g=1","lastPost":1492720850},{"name":"Horttanainen","id":5142164,"emailhash":"73693df9b10f526d659476a74b374f6d","lastPost":1492720813},{"name":"Mikhail","id":314290,"emailhash":"5ffde821f0f9670e601b19f1731a6849","lastPost":1492720793},{"name":"Luc Danton","id":726300,"emailhash":"!https://i.stack.imgur.com/ZWH6H.png?s=128\u0026g=1","lastPost":1492720581},{"name":"nwp","id":3484570,"emailhash":"!https://i.stack.imgur.com/r5BRZ.png?s=128\u0026g=1","lastPost":1492720487},{"name":"BoundaryImposition","id":560648,"emailhash":"!https://i.stack.imgur.com/AkjZZ.jpg?s=128\u0026g=1","lastPost":1492720477}],"messages":[{"date":1492720867,"user":"Mgetz","userid":332733}],"singleImage":false,"tags":["c++","c++11","c++14","c++17","c++-faq"]}]} 
+            };
+
+            StackExchange.chatAd.init(options);
+        });
+    // -->
+    </script>
+
+</div>
+
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/2906582?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted large">930</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link?noredirect=1&amp;lq=1" class="question-hyperlink">How to create an HTML button that acts like a link?</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/33978785?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/33978785/need-help-centering-image-in-td-that-is-also-a-link?noredirect=1&amp;lq=1" class="question-hyperlink">Need help centering image in &lt;td&gt; that is also a link</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/43432890?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/43432890/delete-statement-from-post-return?noredirect=1&amp;lq=1" class="question-hyperlink">Delete statement from $_POST return</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/34727996?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">-2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/34727996/how-do-i-set-background-in-mastarpage-asp-net-web-developer?noredirect=1&amp;lq=1" class="question-hyperlink">how do i set background in MastarPage (ASP.NET,WEB DEVELOPER)</a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/166221?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes extra-large">2224</div></a><a href="http://stackoverflow.com/questions/166221/how-can-i-upload-files-asynchronously?rq=1" class="question-hyperlink">How can I upload files asynchronously?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/503093?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">6380</div></a><a href="http://stackoverflow.com/questions/503093/how-to-redirect-to-another-webpage-in-javascript-jquery?rq=1" class="question-hyperlink">How to redirect to another webpage in JavaScript/jQuery?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/596351?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">1889</div></a><a href="http://stackoverflow.com/questions/596351/how-can-i-know-which-radio-button-is-selected-via-jquery?rq=1" class="question-hyperlink">How can I know which radio button is selected via jQuery?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/950087?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">3323</div></a><a href="http://stackoverflow.com/questions/950087/how-do-i-include-a-javascript-file-in-another-javascript-file?rq=1" class="question-hyperlink">How do I include a JavaScript file in another JavaScript file?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/1107220?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">765</div></a><a href="http://stackoverflow.com/questions/1107220/how-can-i-select-an-element-by-name-with-jquery?rq=1" class="question-hyperlink">How can I select an element by name with jQuery?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/1279957?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">1183</div></a><a href="http://stackoverflow.com/questions/1279957/how-to-move-an-element-into-another-element?rq=1" class="question-hyperlink">How to move an element into another element?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/1789945?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">5957</div></a><a href="http://stackoverflow.com/questions/1789945/how-to-check-whether-a-string-contains-a-substring-in-javascript?rq=1" class="question-hyperlink">How to check whether a string contains a substring in JavaScript?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/5404839?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">1653</div></a><a href="http://stackoverflow.com/questions/5404839/how-can-i-refresh-a-page-with-jquery?rq=1" class="question-hyperlink">How can I refresh a page with jQuery?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/5411538?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">1074</div></a><a href="http://stackoverflow.com/questions/5411538/redirect-from-an-html-page?rq=1" class="question-hyperlink">Redirect from an HTML page?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/9899372?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">616</div></a><a href="http://stackoverflow.com/questions/9899372/pure-javascript-equivalent-to-jquerys-ready-how-to-call-a-function-when-the?rq=1" class="question-hyperlink">pure JavaScript equivalent to jQuery's $.ready() how to call a function when the page/dom is ready for it</a></div>
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/157559/whats-the-worst-thing-anyone-could-do-in-a-fast-food-restaurant" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What's the worst thing anyone could do in a fast-food restaurant?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="https://puzzling.stackexchange.com/questions/51167/another-picture-puzzle" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Another picture puzzle _________
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/78604/how-many-people-would-have-to-be-killed-to-make-the-streets-run-red-with-blood" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How many people would have to be killed to make the streets 'run red with blood'?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="https://ell.stackexchange.com/questions/127213/when-i-answer-some-question-on-stackoverflow-sites-people-thank-me-and-say-it-he" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    When I answer some question on stackoverflow sites people thank me and say it helped
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-diy" title="Home Improvement Stack Exchange"></div><a href="https://diy.stackexchange.com/questions/113218/how-do-you-push-a-cable-through-a-standard-conduit-inside-the-wall" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do you push a cable through a standard conduit inside the wall?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="https://travel.stackexchange.com/questions/91931/how-to-spend-a-night-in-an-unknown-city-without-an-hotel-is-there-a-guide-or-re" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to spend a night in an unknown city without an hotel? Is there a guide or resource online?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-retrocomputing" title="Retrocomputing Stack Exchange"></div><a href="https://retrocomputing.stackexchange.com/questions/2697/could-you-see-what-you-are-typing-in-a-teletype" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:648 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Could you see what you are typing in a Teletype?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-history" title="History Stack Exchange"></div><a href="https://history.stackexchange.com/questions/37591/venezuelan-crisis-of-1902-03-why-is-there-a-russian-flag-on-the-cover-of-the-pr" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:324 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Venezuelan crisis of 1902–03: Why is there a Russian flag on the cover of the prominent newspaper 'Le Petite Parisien'?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="https://security.stackexchange.com/questions/157572/why-should-i-offer-http-in-addition-to-https" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why should I offer HTTP in addition to HTTPS?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/117127/are-these-lists-equal" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are these lists equal?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-bicycles" title="Bicycles Stack Exchange"></div><a href="https://bicycles.stackexchange.com/questions/46312/threatening-swerving-by-driver-should-i-report-it-canada" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:126 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Threatening swerving by driver - should I report it? (Canada)
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/88317/should-i-review-differently-when-the-review-itself-will-be-public" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should I review differently when the review itself will be public?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="https://aviation.stackexchange.com/questions/37280/does-the-faa-dictate-that-bridges-are-closed-for-the-thunder-over-louisville-air" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does the FAA dictate that bridges are closed for the Thunder Over Louisville airshow event?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="https://workplace.stackexchange.com/questions/89539/i-saw-a-colleague-my-ex-tutor-spying-on-my-conversation-with-ceo-about-salar" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    I saw a colleague - my ex tutor - spying on my conversation with CEO about salary
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/157687/is-a-parselmouth-immune-to-the-effects-of-the-stare-of-the-basilisk" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is a Parselmouth immune to the effects of the stare of the Basilisk?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-movies" title="Movies &amp; TV Stack Exchange"></div><a href="https://movies.stackexchange.com/questions/71986/identify-a-movie-featuring-a-mechanical-spider" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Identify a movie featuring a mechanical spider
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-magento" title="Magento Stack Exchange"></div><a href="https://magento.stackexchange.com/questions/170947/dependency-injection-and-constructor-parameters" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:479 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Dependency Injection and constructor parameters
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="https://rpg.stackexchange.com/questions/98242/a-player-wants-to-always-recruit-npcs-into-the-party-how-do-i-handle-this" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    A player wants to always recruit NPCs into the party. How do I handle this?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="https://math.stackexchange.com/questions/2243900/what-exactly-is-calculus" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What exactly is calculus?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-cs" title="Computer Science Stack Exchange"></div><a href="https://cs.stackexchange.com/questions/74269/3sat-solvable-in-polynomial-time-but-with-exponential-tuning" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:419 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    3SAT solvable in polynomial time...but with exponential tuning?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-skeptics" title="Skeptics Stack Exchange"></div><a href="https://skeptics.stackexchange.com/questions/38024/did-einstein-comment-on-feeling-the-presence-of-jesus-while-reading-the-gospels" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:212 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Did Einstein comment on feeling the presence of Jesus while reading the Gospels?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="https://codereview.stackexchange.com/questions/161172/project-euler-problem-4-palindromic-number" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Project Euler Problem #4 - Palindromic number
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="https://english.stackexchange.com/questions/385333/bill-o-reilly-is-forced-out-at-fox-news" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Bill O’Reilly Is Forced Out at Fox News
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/117132/count-occurences-of-a-set-in-a-list" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Count occurences of a set in a list
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+		<script>
+StackExchange.ready(function(){$.get('/posts/16562577/ivc/7f9d');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/16562577/ivc/7f9d" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">default</div></div>
+
+
+        </div>
+    </div><script async="" src="./javascript - How can I make a button redirect my page to another page_ - Stack Overflow_files/clc.min.js"></script>
+    <div id="footer" class="categories" role="contentinfo">
+        <div class="footerwrap">            
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="https://stackoverflow.blog/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="https://data.stackexchange.com/">data</a>
+                    <a href="https://stackexchange.com/legal">legal</a>
+                    <a href="https://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="https://www.stackoverflowbusiness.com/advertise">advertising info</a>
+                        <a href="http://stackoverflow.com/jobs/directory/developer-jobs">developer jobs directory</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="https://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                        <li><a href="http://softwareengineering.stackexchange.com/" title="professionals, academics, and students working within the systems development life cycle who care about creating, delivering, and maintaining software responsibly">Software Engineering</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Wolfram Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                        <li><a href="http://crypto.stackexchange.com/" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://codereview.stackexchange.com/" title="peer programmer code reviews">Code Review</a></li>
+                        <li><a href="http://magento.stackexchange.com/" title="users of the Magento e-Commerce platform">Magento</a></li>
+                        <li><a href="http://dsp.stackexchange.com/" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                        <li><a href="http://raspberrypi.stackexchange.com/" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                        <li><a href="http://codegolf.stackexchange.com/" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://music.stackexchange.com/" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (8)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://ell.stackexchange.com/" title="speakers of other languages learning English">English Language Learners</a></li>
+                        <li><a href="http://japanese.stackexchange.com/" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                        <li><a href="http://anime.stackexchange.com/" title="anime and manga fans">Anime &amp; Manga</a></li>
+                        <li><a href="http://mechanics.stackexchange.com/" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (17)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                        <li><a href="http://cs.stackexchange.com/" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                        <li><a href="http://philosophy.stackexchange.com/" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (3)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="https://www.stackoverflowbusiness.com/talent">Stack Overflow Talent</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2017 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2017.4.20.25723
+            </div>
+                </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    
+    
+        
+        ados.run.push(function () {
+                setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+                ados_setKeywords('javascript,jquery,html,x-persona-frontend');; ados_load();
+        });   
+        
+</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-5620270-1');
+                ga('create', 'UA-5620270-59', {name: 'pageData', sampleRate: 5 });
+                ga('set', 'dimension2', '|javascript|jquery|html|');
+                ga('pageData.set', 'dimension2', '|javascript|jquery|html|');
+                ga('send', 'pageview');
+                ga('pageData.send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+    
+<div class="top-left" id="autoSliderContainer"><div id="autoScrollSlider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-slider-range-max ui-widget-header" style="width: 34.4828%;"></div><a href="http://stackoverflow.com/questions/16562577/how-can-i-make-a-button-redirect-my-page-to-another-page#" class="ui-slider-handle ui-state-default ui-corner-all" style="left: 65.5172%;"></a></div></div></body></html>

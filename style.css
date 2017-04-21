@@ -43,6 +43,20 @@ h3 {
   font-size: 24px;
   float: right;
 }
+
+#marketingTableButton {
+  width: 200px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: rgba(25, 170, 180, .5);
+  float: right;
+  position: fixed;
+  top: 80px;
+  right: 240px;
+  font-family: serif;
+  font-size: 16px;
+}
+
 canvas {
   background: #b2e4ff;
   border: 3px solid black;
@@ -69,6 +83,22 @@ canvas {
   float: left;
   border: none;
   overflow: hidden;
+}
+
+.product-img {
+  animation-duration: .5s;
+  animation-name: getbig;
+}
+
+@keyframes getbig {
+  0% {
+    width: 295px;
+    height: 295px;
+  }
+  100% {
+    height: 300px;
+    width: 300px;
+  }
 }
 
 #img0 {
@@ -135,11 +165,13 @@ th {
 }
 .recommend-yes {
   background-color: #2F7455;
+  opacity: .8;
   color: black;
   font-weight: bold;
 }
 .recommend-no {
   background-color: darkred;
+  opacity: .8;
   color: black;
   font-weight: bold;
 }
