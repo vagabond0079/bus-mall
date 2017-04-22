@@ -11,6 +11,26 @@ var state = {
   firstRandomNumber: '',
 };
 
+var img0 = document.getElementById('img0');
+var img1 = document.getElementById('img1');
+var img2 = document.getElementById('img2');
+
+//===== Main Function =====
+
+function main() {
+  pullFromLocalStorage();
+  randomProductChooser();
+  productImageRender();
+
+  //  Event Listeners
+
+
+  img0.addEventListener('click', handleImgClick);
+  img1.addEventListener('click', handleImgClick);
+  img2.addEventListener('click', handleImgClick);
+
+}
+
 // ===== Product-img Object Contstructor =====
 
 function Product(name, imgName, htmlId){
@@ -41,13 +61,14 @@ var products = [
   new Product('Pet Sweep', 'pet-sweep.jpg', 'pet-sweep'),
   new Product('Pizza Scissors', 'scissors.jpg', 'scissors'),
   new Product('Shark Sleeping Bag', 'shark.jpg', 'shark'),
-  new Product('Baby Sweepwer Onesie', 'sweep.png', 'sweep'),
+  new Product('Baby Sweeper Onesie', 'sweep.png', 'sweep'),
 
   new Product('Tauntaun Sleeping Bag', 'tauntaun.jpg', 'tauntaun'),
   new Product('Unicorn Meat', 'unicorn.jpg', 'unicorn'),
   new Product('Tentacle USB Flash Drive', 'usb.gif', 'usb'),
   new Product('Reversed Watering Can', 'water-can.jpg', 'water-can'),
-  new Product('Novelty Wine Glass', 'wine-glass.jpg', 'wine-glass'),];
+  new Product('Novelty Wine Glass', 'wine-glass.jpg', 'wine-glass'),
+];
 
 //===== Pull Data from Local Storage =====
 
@@ -62,27 +83,23 @@ function pullFromLocalStorage() {
   }
 }
 
-pullFromLocalStorage();
-
 // ===== Random Product-img Chooser =====
 
 function randomProductChooser(){
 
   for(var i = 0; i < 3; i++){
     state.randomNumber = Math.floor (Math.random() * (products.length));
-    if(state.randomNumber === state.prevRandomNumber || state.randomNumber === state.firstRandomNumber || state.totalClicks-1 ===     products[state.randomNumber].previouslyDisplayed) {
+    if(state.randomNumber === state.prevRandomNumber || state.randomNumber === state.firstRandomNumber || state.totalClicks-1 === products[state.randomNumber].previouslyDisplayed) {
       i--;
     } else {
       state.currentProductsDisplayed[i] = products[state.randomNumber];
-      products[state.randomNumber].numberTimesShown++;
-      products[state.randomNumber].previouslyDisplayed = state.totalClicks;
+      state.currentProductsDisplayed[i].numberTimesShown++;
+      state.currentProductsDisplayed[i].previouslyDisplayed = state.totalClicks;
       state.firstRandomNumber = state.prevRandomNumber;
       state.prevRandomNumber = state.randomNumber;
     }
   }
 }
-
-randomProductChooser();
 
 // ===== Render Random Product-img =====
 
@@ -100,22 +117,19 @@ function productImageRender(){
     document.getElementById('img'+i).appendChild(newImg);
   }
 }
-productImageRender();
 
 // ===== Img Click Event Handler =====
 
 function handleImgClick(e) {
   e.preventDefault;
-
-  if(e.target === img0){
-    var i = 0;
-  } else if (e.target === img1){
-    i = 1;
+  //
+  if(e.currentTarget === img0){
+    state.currentProductsDisplayed[0].numberTimesClicked++;
+  } else if (e.currentTarget === img1){
+    state.currentProductsDisplayed[1].numberTimesClicked++;
   } else {
-    i = 2;
+    state.currentProductsDisplayed[2].numberTimesClicked++;
   }
-
-  state.currentProductsDisplayed[i].numberTimesClicked++;
 
   state.totalClicks++;
 
@@ -131,6 +145,7 @@ function handleImgClick(e) {
     img2.removeEventListener('click', handleImgClick);
 
     displayResults();
+    marketingTableReportButton();
 
   }else {
     for( var j = 0; j < 3; j++){
@@ -144,18 +159,6 @@ function handleImgClick(e) {
     productImageRender();
   }
 }
-
-// ===== Event Listener =====
-
-var img0 = document.getElementById('img0');
-img0.addEventListener('click', handleImgClick);
-
-var img1 = document.getElementById('img1');
-img1.addEventListener('click', handleImgClick);
-
-var img2 = document.getElementById('img2');
-img2.addEventListener('click', handleImgClick);
-
 
 // ===== Bar Chart of Results: Votes Received =====
 
@@ -183,6 +186,7 @@ function displayResults() {
   var productVotes = [];
 
   function productsToProductVotes() {
+    productVotes.length = 0;
     for(var i = 0; i < products.length; i++){
       productVotes.push(products[i].numberTimesClicked);
     }
@@ -259,4 +263,116 @@ function displayResults() {
       }
     }
   });
+}
+
+//===== Create Marketing Report Button =====
+
+function marketingTableReportButton(){
+  var app = document.getElementById('app');
+  var marketingTableButton = document.createElement('button');
+  marketingTableButton.id = 'marketingTableButton';
+  marketingTableButton.setAttribute('onclick', 'window.open("marketing-table.html")');
+  var newText = document.createTextNode('See Marketing Report');
+  marketingTableButton.appendChild(newText);
+  app.insertBefore(marketingTableButton, app.childNodes[0]);
+}
+
+//===== Create Marketing Report Table =====
+function marketingTableCreate(){
+
+  pullFromLocalStorage();
+
+  var productClickPercentage = [];
+
+  function productsToProductClickPercentage() {
+    for(var i = 0; i < products.length; i++){
+      productClickPercentage.push(Math.round((products[i].numberTimesClicked/products[i].numberTimesShown) * 100));
+    }
+  }
+
+  productsToProductClickPercentage();
+
+  var marketingTable = document.createElement('table');
+  var tableWrap = document.getElementById('tableWrap');
+  var marketingTableHeader = document.createElement('thead');
+  var marketingTableTopRow = document.createElement('tr');
+
+  tableWrap.appendChild(marketingTable);
+  marketingTable.appendChild(marketingTableHeader);
+  marketingTableHeader.appendChild(marketingTableTopRow);
+
+  for(var i = 0; i < 5; i++){
+    var marketingTableColumnHeaders = document.createElement('th');
+    marketingTableColumnHeaders.id = 'header-'+i;
+    marketingTableTopRow.appendChild(marketingTableColumnHeaders);
+  }
+
+  var columnLabels = ['Item Name', 'Total Times Shown', 'Total Times Clicked', '% Clicked per Time Shown', 'Recommended?'];
+
+  for(i = 0; i < 5; i++){
+    var header = document.getElementById('header-'+i);
+    var headerText = document.createTextNode(columnLabels[i]);
+    header.appendChild(headerText);
+  }
+
+  for(i = 0; i < products.length; i++){
+    var marketingTableDataRow = document.createElement('tr');
+    marketingTableDataRow.id = 'row '+i;
+    marketingTableHeader.appendChild(marketingTableDataRow);
+  }
+
+  for(i = 0; i < products.length; i++){
+    var marketingTableDataCell = document.createElement('td');
+    marketingTableDataCell.className = 'first-row';
+    var row = document.getElementById('row '+i);
+    var marketingTableDataCellText = document.createTextNode(products[i].name);
+    marketingTableDataCell.appendChild(marketingTableDataCellText);
+    row.appendChild(marketingTableDataCell);
+  }
+
+  for(i = 0; i < products.length; i++){
+    marketingTableDataCell = document.createElement('td');
+    row = document.getElementById('row '+i);
+    marketingTableDataCellText = document.createTextNode(products[i].numberTimesShown);
+    marketingTableDataCell.appendChild(marketingTableDataCellText);
+    row.appendChild(marketingTableDataCell);
+  }
+
+  for(i = 0; i < products.length; i++){
+    marketingTableDataCell = document.createElement('td');
+    row = document.getElementById('row '+i);
+    marketingTableDataCellText = document.createTextNode(products[i].numberTimesClicked);
+    marketingTableDataCell.appendChild(marketingTableDataCellText);
+    row.appendChild(marketingTableDataCell);
+  }
+
+  for(i = 0; i < products.length; i++){
+    marketingTableDataCell = document.createElement('td');
+    row = document.getElementById('row '+i);
+    marketingTableDataCellText = document.createTextNode(productClickPercentage[[i]]+'%');
+    marketingTableDataCell.appendChild(marketingTableDataCellText);
+    row.appendChild(marketingTableDataCell);
+  }
+
+  for(i = 0; i < products.length; i++){
+    marketingTableDataCell = document.createElement('td');
+    row = document.getElementById('row '+i);
+    if(productClickPercentage[i]>30){
+      marketingTableDataCellText = document.createTextNode('YES');
+      marketingTableDataCell.className = 'recommend-yes';
+    } else {
+      marketingTableDataCellText = document.createTextNode('NO');
+      marketingTableDataCell.className = 'recommend-no';
+    }
+    marketingTableDataCell.appendChild(marketingTableDataCellText);
+    row.appendChild(marketingTableDataCell);
+  }
+}
+
+if(document.getElementById('app')){
+  main();
+}
+
+if(document.getElementById('app-marketing')){
+  marketingTableCreate();
 }
